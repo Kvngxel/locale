@@ -1,11 +1,37 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
     content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontSize: {
+      xs: ['12px', '16px'],
+      sm: ['14px', '20px'],
+      base: ['16px', '19.5px'],
+      lg: ['18px', '21.94px'],
+      xl: ['20px', '24.38px'],
+      '2xl': ['32px', '29.26px'],
+      '3xl': ['28px', '50px'],
+      '4xl': ['48px', '58px'],
+      '8xl': ['96px', '106px']
+    },
+    extend: {
+      fontFamily: {
+        sans: ['Inter var', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
+      colors: {
+        'pry': "#EEEEEE",
+        "sec": "#B8D3AB",
+        "sec2": "#F8F8F8",
+        "sec3": "#26520A",
+        "btn": "#3A8218",
+      },
+
+    },
   },
   plugins: [],
 }
