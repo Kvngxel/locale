@@ -32,13 +32,10 @@ export const Directories = () => {
   },
 ];
 
-// You can access the company data like this:
-console.log(companies[0].name); // Output: "Google Inc."
-console.log(companies[1].desc); // Output: "Apple Inc. is a renowned American..."
 
   return (
-    <div className="w-[50vw] mx-auto p-12 bg-pry flex flex-col">
-      <h1 className="text-2xl self-center">Locale directories</h1>
+    <div className="w-[50vw] mx-auto p-12 flex flex-col">
+      <h1 className="text-xl text-sec3 self-center mb-10">Locale directories</h1>
       <div className="flex flex-wrap justify-around gap-6 rounded">
       {companies &&
             companies

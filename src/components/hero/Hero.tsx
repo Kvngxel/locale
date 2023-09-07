@@ -6,11 +6,10 @@ export const Hero = () => {
             <h1 className="text-2xl">Welcome to </h1>
             <h1 className="text-2xl">Your </h1>
             <h1 className="text-2xl">Locale directory</h1>
-
+            <p>Home for all your Locale needs :)</p>
         </div>
         <div className="relative">
             <img src={heroImg} alt="" />
-            <button className="absolute">CREATE YOUR LOCALE </button>
         </div>
         
     </div>
