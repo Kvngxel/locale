@@ -49,6 +49,7 @@ export const MallamFx = () => {
       profit: true,
     },
   ];
+  
   return (
     <div className="w-[50vw] mx-auto p-12">
       <h1 className="text-center mb-6 text-2xl">MallamFx</h1>
