@@ -1,11 +1,9 @@
-// import React from 'react';
-
 import { Footer } from '../components';
 import { NavBar } from '../components';
 import { Comment } from '../components';
 
 
- function ContactUs() {
+export const Contact = () => {
     
     // const contact = {
     //   first: "Your",
@@ -68,18 +66,4 @@ import { Comment } from '../components';
       );
     }
 
-    export default ContactUs;
 
-// function Contact() {
-//     return (
-//       <div>  
-        
-//         <button onClick={() => window.location.href = `/contacts/1`} type="submit">Contact</button>
-            
-    
-        
-//       </div>
-//     );
-//   }
-  
-//   export default Contact;
