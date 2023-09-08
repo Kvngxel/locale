@@ -31,21 +31,27 @@ export const Directories = () => {
     address: "1 Hacker Way, Menlo Park, CA 94025",
     desc: "Facebook, now Meta Platforms, Inc., is a social media conglomerate. It's known for its social networking platform and involvement in virtual reality and augmented reality technologies.",
   },
+  {
+    _id: 6,
+    name: "Facebook, Inc.",
+    address: "1 Hacker Way, Menlo Park, CA 94025",
+    desc: "Facebook, now Meta Platforms, Inc., is a social media conglomerate. It's known for its social networking platform and involvement in virtual reality and augmented reality technologies.",
+  },
 ];
 
 
   return (
     <div className="w-[70vw] mx-auto p-12 flex flex-col">
-      <h1 className="text-lg text-sec3 self-center mb-20">Locale directories</h1>
-      <div className="flex w-full flex-wrap justify-around gap-6 rounded">
+      <h1 className="text-lg text-sec4 self-center mb-20">LOCALE DIRECTORIES</h1>
+      <div className="flex w-full flex-wrap justify-evenly gap-6 rounded gap-y-16">
       {companies &&
             companies
               .map((company) => (
-                <div key={company._id} className="relative basis-[45%] rounded-md p-4 basis">
-                 <img src={heroImg} alt="" className="w-full"  />
-                  <div className="absolute bottom-4 bg-sec flex justify-around">
-                  <p className="text-xs ">{company.name}</p>
-                  <p className="text-xs">See more ...
+                <div key={company._id} className="relative basis-[40%] rounded-lg basis">
+                 <img src={heroImg} alt="" className="w-full rounded-[9px]"  />
+                  <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
+                  <p className="text-sm ">{company.name}</p>
+                  <p className="text-xs text-white">See more ...
                   </p>
                   </div>
                  
@@ -53,6 +59,10 @@ export const Directories = () => {
               ))}
 
       </div>
+      <div>
+        
+      </div>
+
       </div>
   )
 }

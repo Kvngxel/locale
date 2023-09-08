@@ -26,6 +26,7 @@ export default {
         "sec": "#B8D3AB",
         "sec2": "#F4F4F4",
         "sec3": "#26520A",
+        "sec4": "#19530B",
         "btn": "#122D05",
       },
 
