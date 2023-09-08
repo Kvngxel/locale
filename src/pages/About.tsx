@@ -2,8 +2,8 @@ import { NavBar } from '../components';
 import { Footer } from '../components';
 import { Comment } from '../components';
 
-function AboutUs() {
-    return (
+export const About = () => {
+  return (
       <div>  
         <NavBar />
         <div className='mx-auto ml-80  mt-60 text-3xl...' >
@@ -52,14 +52,4 @@ function AboutUs() {
       </div>
     );
   }
-  export default AboutUs;
-// function AboutUs() {
-//     return (
-//       <div>
-//        <button onClick={() => window.location.href = `/AboutUs/1`} >About</button>
-        
-//       </div>
-//     );
-//   }
-  
-//   export default AboutUs;
+ 
