@@ -1,3 +1,4 @@
+import { heroImg } from "../../assets/images";
 export const Directories = () => {
   const companies = [
   {
@@ -34,23 +35,20 @@ export const Directories = () => {
 
 
   return (
-    <div className="w-[50vw] mx-auto p-12 flex flex-col">
-      <h1 className="text-xl text-sec3 self-center mb-10">Locale directories</h1>
-      <div className="flex flex-wrap justify-around gap-6 rounded">
+    <div className="w-[70vw] mx-auto p-12 flex flex-col">
+      <h1 className="text-lg text-sec3 self-center mb-20">Locale directories</h1>
+      <div className="flex w-full flex-wrap justify-around gap-6 rounded">
       {companies &&
             companies
               .map((company) => (
-                <div key={company._id} className="bg-sec basis-2/5 rounded-md p-4">
-                 <div className="flex justify-between mb-4">
-                  <div className="w-20 h-20 rounded-full bg-pry "></div>
-                  <div className="basis-1/2 justify-around">
+                <div key={company._id} className="relative basis-[45%] rounded-md p-4 basis">
+                 <img src={heroImg} alt="" className="w-full"  />
+                  <div className="absolute bottom-4 bg-sec flex justify-around">
                   <p className="text-xs ">{company.name}</p>
-                  <p className="text-xs">
-                    {company.address}
-                  </p></div>
+                  <p className="text-xs">See more ...
+                  </p>
                   </div>
-                  <p className="text-xs">{company.desc}</p>
-
+                 
                 </div>
               ))}
 

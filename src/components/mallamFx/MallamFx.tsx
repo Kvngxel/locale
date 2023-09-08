@@ -54,7 +54,7 @@ export const MallamFx = () => {
     <div className="w-[50vw] mx-auto p-12">
       <h1 className="text-center mb-6 text-2xl">MallamFx</h1>
       <div className="bg-pry py-10 w-full h-[40vh] mb-6 flex item-center  justify-around">
-        <div className="px-6 border-l-2 text-xl flex flex-col justify-between">
+        <div className="px-6 border-l-2 text-base flex flex-col justify-between">
           {rates &&
             rates
               .filter((rate) => rate._id <= 4)
@@ -67,7 +67,7 @@ export const MallamFx = () => {
                 </div>
               ))}
         </div>
-        <div className="px-6 border-r-2 text-xl flex flex-col justify-between">
+        <div className="px-6 border-r-2 text-base flex flex-col justify-between">
           {rates &&
             rates
               .filter((rate) => rate._id > 4)
