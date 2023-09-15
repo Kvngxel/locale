@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .containr{
+        @apply w-[85%] max-sm:w-full mx-auto;
+    }
+    .colgrad{
+        @apply bg-gradient-to-r from-[#C63D2F] via-[#E25E3E] via-[#FF9B50] to-[#FFBB5C]
+    }
+}
