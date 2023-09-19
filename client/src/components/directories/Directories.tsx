@@ -97,12 +97,12 @@ export const Directories = () => {
   }, []);
 
   return (
-    <div className="w-[70vw] mx-auto p-12 flex flex-col">
+    <div className="containr mx-auto py-12 flex flex-col">
       <h1 className="text-lg text-sec4 self-center mb-20">LOCALE DIRECTORIES</h1>
       <div className="flex w-full flex-wrap justify-evenly gap-6 rounded gap-y-16">
 
         {data2 && data2.slice(first,first+6).map((company) => (
-          <div key={company.id} className="relative basis-[40%] rounded-lg basis">
+          <div key={company.id} className="relative md:basis-[40%] basis[45%] rounded-lg basis">
             <img src={heroImg} alt="" className="w-full rounded-[9px]" />
             <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
               <p className="text-sm">{company.name}</p>
