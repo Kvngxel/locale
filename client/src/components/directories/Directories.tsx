@@ -1,68 +1,121 @@
 import { heroImg } from "../../assets/images";
-export const Directories = () => {
-  const companies = [
-  {
-    _id: 1,
-    name: "Google Inc.",
-    address: "1600 Amphitheatre Parkway, Mountain View, CA 94043",
-    desc: "Google is a multinational technology company that specializes in Internet-related services and products. It's known for its search engine, online advertising technologies, cloud computing, software, and hardware.",
-  },
-  {
-    _id: 2,
-    name: "Apple Inc.",
-    address: "1 Apple Park Way, Cupertino, CA 95014",
-    desc: "Apple Inc. is a renowned American multinational technology company that designs, manufactures, and markets consumer electronics, software, and services. It's famous for products like the iPhone, iPad, and Mac.",
-  },
-  {
-    _id: 3,
-    name: "Microsoft Corporation",
-    address: "One Microsoft Way, Redmond, WA 98052",
-    desc: "Microsoft is a global technology company that develops, licenses, and supports software, hardware, and services. It's well-known for its Windows operating system and Office suite of productivity software.",
-  },
-  {
-    _id: 4,
-    name: "Amazon.com, Inc.",
-    address: "410 Terry Ave N, Seattle, WA 98109",
-    desc: "Amazon is an American multinational technology and e-commerce company. It's one of the world's largest online sales platforms and is involved in various businesses, including cloud computing and digital streaming.",
-  },
-  {
-    _id: 5,
-    name: "Facebook, Inc.",
-    address: "1 Hacker Way, Menlo Park, CA 94025",
-    desc: "Facebook, now Meta Platforms, Inc., is a social media conglomerate. It's known for its social networking platform and involvement in virtual reality and augmented reality technologies.",
-  },
-  {
-    _id: 6,
-    name: "Facebook, Inc.",
-    address: "1 Hacker Way, Menlo Park, CA 94025",
-    desc: "Facebook, now Meta Platforms, Inc., is a social media conglomerate. It's known for its social networking platform and involvement in virtual reality and augmented reality technologies.",
-  },
-];
+import { useEffect, useState } from "react";
 
+interface ApiItem {
+    address:string; 
+    created_at:string;
+    description:string; 
+    id:number;
+    name:string;
+    updated_at:string;
+}
+export const Directories = () => {
+  const [data, setData] = useState<ApiItem[]>([]);
+  const [first, setFirst] = useState(0);
+  const [from, setFrom] = useState(1);
+  // this is a template data to show the maximum and minimum are working
+   const data2=[
+    {
+      id:1,
+      name:"jokes",
+    },
+    {
+      id:2,
+      name:"jokes",
+    },
+    {
+      id:3,
+      name:"jokes",
+    },
+    {
+      id:4,
+      name:"jokes",
+    },
+    {
+      id:5,
+      name:"jokes",
+    },
+    {
+      id:6,
+      name:"jokes",
+    },
+    {
+      id:7,
+      name:"jokes",
+    },
+    {
+      id:8,
+      name:"jokes",
+    },
+    {
+      id:9,
+      name:"jokes",
+    },
+    {
+      id:10,
+      name:"jokes",
+    },
+    {
+      id:11,
+      name:"jokes",
+    },
+    {
+      id:12,
+      name:"jokes",
+    },
+    {
+      id:13,
+      name:"jokes",
+    },
+   ]
+
+  const increase = () =>{
+    if(first+6<data2.length){
+      setFirst(first+6);
+      setFrom(from+1)
+    }
+    
+  } 
+  const reduce = () =>{
+    if(first>0){
+      setFirst(first-6);
+      setFrom(from-1)
+    }
+
+  } 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/directories');
+        const apiData: ApiItem[] = await response.json();
+        setData(apiData);
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
-    <div className="w-[70vw] mx-auto p-12 flex flex-col">
+    <div className="containr mx-auto py-12 flex flex-col">
       <h1 className="text-lg text-sec4 self-center mb-20">LOCALE DIRECTORIES</h1>
       <div className="flex w-full flex-wrap justify-evenly gap-6 rounded gap-y-16">
-      {companies &&
-            companies
-              .map((company) => (
-                <div key={company._id} className="relative basis-[40%] rounded-lg basis">
-                 <img src={heroImg} alt="" className="w-full rounded-[9px]"  />
-                  <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
-                  <p className="text-sm ">{company.name}</p>
-                  <p className="text-xs text-white">See more ...
-                  </p>
-                  </div>
-                 
-                </div>
-              ))}
 
+        {data2 && data2.slice(first,first+6).map((company) => (
+          <div key={company.id} className="relative md:basis-[40%] basis[45%] rounded-lg basis">
+            <img src={heroImg} alt="" className="w-full rounded-[9px]" />
+            <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
+              <p className="text-sm">{company.name}</p>
+              <p className="text-sm">{company.id}</p>
+              <p className="text-xs text-white">See more ...</p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div>
-        
-      </div>
-
-      </div>
-  )
-}
+      <div className="flex justify-center gap-6 mt-6 items-center"><h1 className="bg-sec aspect-[] rounded py-2 px-4" onClick={reduce}>{'<'}</h1> {data && <h1>{from} of  {Math.ceil(data2.length/5)}</h1>} <h1 onClick={increase} className="bg-sec aspect-[] rounded py-2 px-4">{'>'}</h1></div>
+    </div>
+  );
+};

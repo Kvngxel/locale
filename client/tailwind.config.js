@@ -21,6 +21,9 @@ export default {
         sans: ['Inter var', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
+      backgroundImage: {
+        'heroBg': "url('/src/assets/images/hero.png')",
+      },
       colors: {
         'pry': "#EEEEEE",
         "sec": "#B8D3AB",
