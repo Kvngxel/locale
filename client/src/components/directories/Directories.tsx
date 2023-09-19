@@ -12,6 +12,7 @@ interface ApiItem {
 export const Directories = () => {
   const [data, setData] = useState<ApiItem[]>([]);
   const [first, setFirst] = useState(0);
+  const [from, setFrom] = useState(1);
   // this is a template data to show the maximum and minimum are working
    const data2=[
     {
@@ -71,12 +72,14 @@ export const Directories = () => {
   const increase = () =>{
     if(first+6<data2.length){
       setFirst(first+6);
+      setFrom(from+1)
     }
-
+    
   } 
   const reduce = () =>{
     if(first>0){
       setFirst(first-6);
+      setFrom(from-1)
     }
 
   } 
@@ -112,7 +115,7 @@ export const Directories = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center gap-6 mt-6 items-center"><h1 className="bg-sec aspect-[] rounded py-2 px-4" onClick={reduce}>{'<'}</h1> <h1>1 of 5</h1> <h1 onClick={increase} className="bg-sec aspect-[] rounded py-2 px-4">{'>'}</h1></div>
+      <div className="flex justify-center gap-6 mt-6 items-center"><h1 className="bg-sec aspect-[] rounded py-2 px-4" onClick={reduce}>{'<'}</h1> {data && <h1>{from} of  {Math.ceil(data2.length/5)}</h1>} <h1 onClick={increase} className="bg-sec aspect-[] rounded py-2 px-4">{'>'}</h1></div>
     </div>
   );
 };
