@@ -87,7 +87,7 @@ export const Directories = () => {
         const response = await fetch('http://localhost:3000/api/directories');
         const apiData: ApiItem[] = await response.json();
         setData(apiData);
-        console.log(apiData);
+        console.log(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
