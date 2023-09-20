@@ -67,7 +67,7 @@ CREATE TABLE "dislike" (
   "directory_id" integer,
   "created_at" timestamp,
   "updated_at" timestamp,
-  UNIQUE("user_id", "directory_id") -- User can only dislike one directory
+  UNIQUE("user_id", "directory_id"), -- User can only dislike one directory
   FOREIGN KEY ("user_id") REFERENCES "user" ("id"),
   FOREIGN KEY ("directory_id") REFERENCES "directory" ("id")
 );
