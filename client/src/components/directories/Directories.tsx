@@ -34,6 +34,7 @@ export const Directories = () => {
     const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/directories');
+        console.log(response)
         const apiData: ApiItem[] = await response.json();
         setData(apiData);
         console.log(data);

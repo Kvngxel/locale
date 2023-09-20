@@ -13,11 +13,11 @@ CREATE TABLE "directory" (
 --  Sample data Directory
 INSERT INTO "directory" ("id","name", "address", "telephone", "user_id", "tags", "profile_image", "description", "created_at", "updated_at")
 VALUES
-  ('1','Business1', '123 Main Street', 123456789, 1, 'Tag1, Tag2', 'image1.jpg', 'Description of 1', '2023-09-20 10:00:00', '2023-09-20 10:30:00'),
-  ('2','Business2', '456 Elm Street', 987654321, 2, 'Tag3, Tag4', 'image2.jpg', 'Description of 2', '2023-09-20 11:00:00', '2023-09-20 11:30:00'),
-  ('3','Business3', '789 Oak Avenue', 555555555, 3, 'Tag1, Tag3', 'image3.jpg', 'Description of 3', '2023-09-20 12:00:00', '2023-09-20 12:30:00'),
-  ('4','Business4', '101 Pine Road', 111111111, 4, 'Tag2, Tag4', 'image4.jpg', 'Description of 4', '2023-09-20 13:00:00', '2023-09-20 13:30:00'),
-  ('5','Business5', '222 Cedar Lane', 999999999, 5, 'Tag1, Tag2', 'image5.jpg', 'Description of 5', '2023-09-20 14:00:00', '2023-09-20 14:30:00');
+  ('Business1', '123 Main Street', 123456789, 1, 'Tag1, Tag2', 'image1.jpg', 'Description of 1', '2023-09-20 10:00:00', '2023-09-20 10:30:00'),
+  ('Business2', '456 Elm Street', 987654321, 2, 'Tag3, Tag4', 'image2.jpg', 'Description of 2', '2023-09-20 11:00:00', '2023-09-20 11:30:00'),
+  ('Business3', '789 Oak Avenue', 555555555, 3, 'Tag1, Tag3', 'image3.jpg', 'Description of 3', '2023-09-20 12:00:00', '2023-09-20 12:30:00'),
+  ('Business4', '101 Pine Road', 111111111, 4, 'Tag2, Tag4', 'image4.jpg', 'Description of 4', '2023-09-20 13:00:00', '2023-09-20 13:30:00'),
+  ('Business5', '222 Cedar Lane', 999999999, 5, 'Tag1, Tag2', 'image5.jpg', 'Description of 5', '2023-09-20 14:00:00', '2023-09-20 14:30:00');
 
 
 CREATE TABLE "user" (
@@ -42,12 +42,12 @@ VALUES
 
 
 CREATE TABLE "like" (
-  "id" integer PRIMARY KEY,
+  "id" SERIAL PRIMARY KEY,
   "user_id" integer,
   "directory_id" integer,
   "created_at" timestamp,
   "updated_at" timestamp,
-  UNIQUE("user_id", "directory_id") -- User can only like one directory
+  UNIQUE("user_id", "directory_id"), -- User can only like one directory,
   FOREIGN KEY ("user_id") REFERENCES "user" ("id"),
   FOREIGN KEY ("directory_id") REFERENCES "directory" ("id")
 );
@@ -62,7 +62,7 @@ VALUES
 
 
 CREATE TABLE "dislike" (
-  "id" integer PRIMARY KEY,
+  "id" SERIAL PRIMARY KEY,
   "user_id" integer,
   "directory_id" integer,
   "created_at" timestamp,
@@ -82,7 +82,7 @@ VALUES
 
 
 CREATE TABLE "comment" (
-  "id" integer PRIMARY KEY,
+  "id" SERIAL PRIMARY KEY,
   "user_id" integer,
   "directory_id" integer,
   "comment" varchar,
@@ -102,7 +102,7 @@ VALUES
 
 
 CREATE TABLE "directory_image" (
-  "id" integer PRIMARY KEY,
+  "id" SERIAL PRIMARY KEY,
   "image_URL" varchar,
   "directory_id" integer,
   "created_at" timestamp,

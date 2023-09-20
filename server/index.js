@@ -14,7 +14,7 @@ app.get ("/", (req, res)=> {
 
 app.get("/api/directories", async (req, res) =>{
     try {
-        const directories = await sql`SELECT * from directories`;
+        const directories = await sql`SELECT * from directory`;
         if (directories) {
             res.status(201).send(directories);
         } else {
