@@ -13,12 +13,16 @@ app.get ("/", (req, res)=> {
 });
 
 app.get("/api/directories", async (req, res) =>{
-    const directories = await sql`SELECT * from directories`
-    // console.log(directories)
-    if (directories){
-        res.status(202).send(directories)
-    } else {
-        res.send(404).send("An error occured")
+    try {
+        const directories = await sql`SELECT * from directory`;
+        if (directories) {
+            res.status(201).send(directories);
+        } else {
+            res.status(404).send("An error occurred");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error); // Log the error for debugging.
+        res.status(500).send("Internal Server Error");
     }
 })
 

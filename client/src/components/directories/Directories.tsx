@@ -13,64 +13,10 @@ export const Directories = () => {
   const [data, setData] = useState<ApiItem[]>([]);
   const [first, setFirst] = useState(0);
   const [from, setFrom] = useState(1);
-  // this is a template data to show the maximum and minimum are working
-   const data2=[
-    {
-      id:1,
-      name:"jokes",
-    },
-    {
-      id:2,
-      name:"jokes",
-    },
-    {
-      id:3,
-      name:"jokes",
-    },
-    {
-      id:4,
-      name:"jokes",
-    },
-    {
-      id:5,
-      name:"jokes",
-    },
-    {
-      id:6,
-      name:"jokes",
-    },
-    {
-      id:7,
-      name:"jokes",
-    },
-    {
-      id:8,
-      name:"jokes",
-    },
-    {
-      id:9,
-      name:"jokes",
-    },
-    {
-      id:10,
-      name:"jokes",
-    },
-    {
-      id:11,
-      name:"jokes",
-    },
-    {
-      id:12,
-      name:"jokes",
-    },
-    {
-      id:13,
-      name:"jokes",
-    },
-   ]
+
 
   const increase = () =>{
-    if(first+6<data2.length){
+    if(first+6<data.length){
       setFirst(first+6);
       setFrom(from+1)
     }
@@ -88,6 +34,7 @@ export const Directories = () => {
     const fetchData = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/directories');
+        console.log(response)
         const apiData: ApiItem[] = await response.json();
         setData(apiData);
         console.log(data);
@@ -104,7 +51,7 @@ export const Directories = () => {
       <h1 className="text-lg text-sec4 self-center mb-20">LOCALE DIRECTORIES</h1>
       <div className="flex w-full flex-wrap justify-evenly gap-6 rounded gap-y-16">
 
-        {data2 && data2.slice(first,first+6).map((company) => (
+        {data && data.slice(first,first+6).map((company) => (
           <div key={company.id} className="relative md:basis-[40%] basis[45%] rounded-lg basis">
             <img src={heroImg} alt="" className="w-full rounded-[9px]" />
             <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
@@ -115,7 +62,7 @@ export const Directories = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center gap-6 mt-6 items-center"><h1 className="bg-sec aspect-[] rounded py-2 px-4" onClick={reduce}>{'<'}</h1> {data && <h1>{from} of  {Math.ceil(data2.length/5)}</h1>} <h1 onClick={increase} className="bg-sec aspect-[] rounded py-2 px-4">{'>'}</h1></div>
+      <div className="flex justify-center gap-6 mt-6 items-center"><h1 className="bg-sec aspect-[] rounded py-2 px-4" onClick={reduce}>{'<'}</h1> {data && <h1>{from} of  {Math.ceil(data.length/5)}</h1>} <h1 onClick={increase} className="bg-sec aspect-[] rounded py-2 px-4">{'>'}</h1></div>
     </div>
   );
 };
