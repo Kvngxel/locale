@@ -1,6 +1,6 @@
 CREATE TABLE "directory" (
   "id" SERIAL PRIMARY KEY,
-  "name" varchar,
+  "dir_name" varchar,
   "address" varchar,
   "telephone" integer,
   "user_id" integer,
@@ -11,7 +11,7 @@ CREATE TABLE "directory" (
   "updated_at" timestamp
 );
 --  Sample data Directory
-INSERT INTO "directory" ("id","name", "address", "telephone", "user_id", "tags", "profile_image", "description", "created_at", "updated_at")
+INSERT INTO "directory" ("dir_name", "address", "telephone", "user_id", "tags", "profile_image", "description", "created_at", "updated_at")
 VALUES
   ('Business1', '123 Main Street', 123456789, 1, 'Tag1, Tag2', 'image1.jpg', 'Description of 1', '2023-09-20 10:00:00', '2023-09-20 10:30:00'),
   ('Business2', '456 Elm Street', 987654321, 2, 'Tag3, Tag4', 'image2.jpg', 'Description of 2', '2023-09-20 11:00:00', '2023-09-20 11:30:00'),
@@ -20,25 +20,27 @@ VALUES
   ('Business5', '222 Cedar Lane', 999999999, 5, 'Tag1, Tag2', 'image5.jpg', 'Description of 5', '2023-09-20 14:00:00', '2023-09-20 14:30:00');
 
 
-CREATE TABLE "user" (
+CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
   "first_name" varchar,
   "last_name" varchar,
+  "email" varchar UNIQUE,
+  "password" varchar,
   "directory_id" integer UNIQUE,
-  "imageURL" varchar,
+  "profile_pic" varchar,
   "address" varchar,
   "created_at" timestamp,
   "updated_at" timestamp,
   FOREIGN KEY ("directory_id") REFERENCES "directory" ("id")
 );
 --  Sample data User
-INSERT INTO "user" ("first_name", "last_name", "directory_id", "imageURL", "address", "created_at", "updated_at")
+INSERT INTO "user" ("first_name", "last_name","email", "directory_id", "imageURL", "address", "created_at", "updated_at")
 VALUES
-  ('User1', 'LastName1', 1, 'image1.jpg', '123 User St', '2023-09-20 09:00:00', '2023-09-20 09:30:00'),
-  ('User2', 'LastName2', 2, 'image2.jpg', '456 User Ave', '2023-09-20 09:30:00', '2023-09-20 10:00:00'),
-  ('User3', 'LastName3', 3, 'image3.jpg', '789 User Rd', '2023-09-20 10:00:00', '2023-09-20 10:30:00'),
-  ('User4', 'LastName4', 4, 'image4.jpg', '101 User Ln', '2023-09-20 10:30:00', '2023-09-20 11:00:00'),
-  ('User5', 'LastName5', 5, 'image5.jpg', '222 User Blvd', '2023-09-20 11:00:00', '2023-09-20 11:30:00');
+  ('User1', 'LastName1','david@example.com', 1, 'image1.jpg', '123 User St', '2023-09-20 09:00:00', '2023-09-20 09:30:00'),
+  ('User2', 'LastName2','david2@example.com', 2, 'image2.jpg', '456 User Ave', '2023-09-20 09:30:00', '2023-09-20 10:00:00'),
+  ('User3', 'LastName3','david2@example.co', 3, 'image3.jpg', '789 User Rd', '2023-09-20 10:00:00', '2023-09-20 10:30:00'),
+  ('User4', 'LastName4','david2@exaple.com', 4, 'image4.jpg', '101 User Ln', '2023-09-20 10:30:00', '2023-09-20 11:00:00'),
+  ('User5', 'LastName5','david2@examp.com', 5, 'image5.jpg', '222 User Blvd', '2023-09-20 11:00:00', '2023-09-20 11:30:00');
 
 
 CREATE TABLE "like" (
@@ -48,7 +50,7 @@ CREATE TABLE "like" (
   "created_at" timestamp,
   "updated_at" timestamp,
   UNIQUE("user_id", "directory_id"), -- User can only like one directory,
-  FOREIGN KEY ("user_id") REFERENCES "user" ("id"),
+  FOREIGN KEY ("user_id") REFERENCES "users" ("id"),
   FOREIGN KEY ("directory_id") REFERENCES "directory" ("id")
 );
 --  Sample data Like
@@ -68,7 +70,7 @@ CREATE TABLE "dislike" (
   "created_at" timestamp,
   "updated_at" timestamp,
   UNIQUE("user_id", "directory_id"), -- User can only dislike one directory
-  FOREIGN KEY ("user_id") REFERENCES "user" ("id"),
+  FOREIGN KEY ("user_id") REFERENCES "users" ("id"),
   FOREIGN KEY ("directory_id") REFERENCES "directory" ("id")
 );
 --  Sample data Dislike
@@ -88,7 +90,7 @@ CREATE TABLE "comment" (
   "comment" varchar,
   "created_at" timestamp,
   "updated_at" timestamp,
-  FOREIGN KEY ("user_id") REFERENCES "user" ("id"),
+  FOREIGN KEY ("user_id") REFERENCES "users" ("id"),
   FOREIGN KEY ("directory_id") REFERENCES "directory" ("id")
 );
 --  Sample data Comment

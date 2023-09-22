@@ -17,11 +17,19 @@ export const Mallamfx = () => {
                                     </p> 
            
                                </div>
-                               <div className= '  ml-2 w-64 h-32 bg-blue-500 '>
+                               <div className='flex mx-auto ml-80 pl-40 mb-10 mr-80'>
+                                            {/* Left Half: Exchange Box Credentials */}
+                                            <div className='w-1/2 p-4 bg-blue-500 text-white'>
+                                            <h2 className="text-lg font-semibold">Exchange Box Credentials</h2>
+                                            {/* Add your exchange box content here */}
+                                            </div>
 
-                             this is a box
-
-                               </div>
+                                                {/* Right Half: Live Currency Updates */}
+                                                <div className='w-1/2 p-4 bg-green-500 text-white'>
+                                                <h2 className="text-lg font-semibold">Live Currency Updates</h2>
+                                                {/* Add your live currency updates content here */}
+                                                </div>
+                                    </div>
         <hr className="mt-40"/>
      {/*    <div className="text-center mt-40">
           <h2 className="text-lg font-inter font-medium">Meet the Team</h2> 

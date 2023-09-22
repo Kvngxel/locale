@@ -1,6 +1,7 @@
 import { NavBar } from '../components';
 import { Footer } from '../components';
 
+// import { Comment } from '../components';
 
 export const About = () => {
   return (
