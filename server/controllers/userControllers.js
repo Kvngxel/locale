@@ -15,7 +15,7 @@ const comparePasswords = async (password, hash) => {
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await sql`SELECT * FROM directory WHERE email = ${email}`;
+    const user = await sql`SELECT * FROM users WHERE email = ${email}`;
     console.log(user);
     if (!user) {
       return res.status(400).json({ error: "invalid username" });
@@ -50,7 +50,7 @@ const registerUser = asyncHandler(async (req, res) => {
     console.log(hashedPassword);
 
     const user =
-      await sql`INSERT INTO directory (email, password, created_at) VALUES (${email}, ${hashedPassword}, CURRENT_TIMESTAMP) RETURNING *`;
+      await sql`INSERT INTO users (email, password, created_at) VALUES (${email}, ${hashedPassword}, CURRENT_TIMESTAMP) RETURNING *`;
       const userPayload = {
         id: user[0].id
       };
@@ -72,12 +72,12 @@ const updateProfile = asyncHandler(async (req, res) => {
     
     try {
         const user = await sql `
-        UPDATE directory
+        UPDATE users
         SET first_name = ${first_name}, last_name = ${last_name}, profile_pic=${profile_pic}, address=${address}, updated_at= CURRENT_TIMESTAMP
         WHERE id = ${id}
         RETURNING *`;
         console.log("successful");
-        const test = await sql`SELECT * FROM directory WHERE id = ${id}`;
+        const test = await sql`SELECT * FROM users WHERE id = ${id}`;
         console.log(test)
         return res.status(201).json({ user });
         //   const user = await sql`UPDATE directory SET first_name = ${first_name}, last_name = ${last_name}, profile_pic = ${profile_pic}, address =${address},  updated_at = CURRENT_TIMESTAMP WHERE id = $1`;
@@ -98,7 +98,7 @@ const deleteUser = asyncHandler(async (req, res) => {
     const id= req.user.id;
   
     try {
-      const deletedUser = await sql`DELETE FROM directory WHERE id = ${id} RETURNING *`;
+      const deletedUser = await sql`DELETE FROM users WHERE id = ${id} RETURNING *`;
       
       if (deletedUser && deletedUser.length > 0) {
         res.status(200).json(deletedUser[0]);
@@ -119,7 +119,7 @@ const userProfile = asyncHandler(async (req, res) => {
     const id= req.user.id;
   
     try {
-        const user = await sql`SELECT * FROM directory WHERE id = ${id}`;
+        const user = await sql`SELECT * FROM users WHERE id = ${id}`;
       
       if (user && user.length > 0) {
         res.status(200).json(user[0]);
