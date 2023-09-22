@@ -5,9 +5,15 @@ interface ApiItem {
     address:string; 
     created_at:string;
     description:string; 
+    dir_name:string;
+    directory_email:string;
     id:number;
-    name:string;
+    profile_image:string;
+    quote:string;
+    telephone:string;
     updated_at:string;
+    user_id:number;
+
 }
 export const Directories = () => {
   const [data, setData] = useState<ApiItem[]>([]);
@@ -55,7 +61,7 @@ export const Directories = () => {
           <div key={company.id} className="relative md:basis-[40%] basis[45%] rounded-lg basis">
             <img src={heroImg} alt="" className="w-full rounded-[9px]" />
             <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
-              <p className="text-sm">{company.name}</p>
+              <p className="text-sm">{company.dir_name}</p>
               <p className="text-sm">{company.id}</p>
               <p className="text-xs text-white">See more ...</p>
             </div>
