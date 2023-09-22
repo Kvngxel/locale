@@ -1,7 +1,7 @@
 import { Home } from "./pages/home/Home";
 import {About} from "./pages/About";
 import { Contact } from "./pages/Contact";
-import { Mallamfx } from "./pages/mallamfx";
+import { Mallamfx } from "./pages/Mallamfx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
 
