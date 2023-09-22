@@ -20,7 +20,7 @@ export const Contact = () => {
          <NavBar />
          <div className='mx-auto ml-80  mt-60 text-3xl...' >
         <h1> 
-            <b> Contac Us</b>
+            <b> Contact Us</b>
             
             </h1>
 

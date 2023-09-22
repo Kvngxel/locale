@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 export const MallamFx = () => {
   const rates = [
     {
@@ -82,7 +83,8 @@ export const MallamFx = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="bg-btn p-2 text-white text-xs">See more</button>
+      <Link className="hover:text-sec3 bg-btn p-2 text-white text-xs " to={'/malamfx'}>See more</Link>
+        {/* <button className="bg-btn p-2 text-white text-xs">See more</button> */}
       </div>
     </div>
   );
