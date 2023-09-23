@@ -3,6 +3,7 @@ import { logo } from "../../assets/images"
 import { Link } from "react-router-dom"
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="w-full text-center">
       <div className="border-t-2 md:py-24">
@@ -26,7 +27,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="text-[#828282] text-xs font-extralight border-t py-9 bg-main">Copyright @ Locale 2023</div>
+      <div className="text-[#828282] text-xs font-extralight border-t py-9 bg-main">Copyright @ Locale {currentYear}</div>
       
     </div>
   )
