@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Register = () => {
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex relative">
       <div className="w-1/3 bg-pry relative">
         <video
           src="https://cdn.dribbble.com/uploads/48292/original/30fd1f7b63806eff4db0d4276eb1ac45.mp4?1689187515"
@@ -11,6 +11,13 @@ export const Register = () => {
           loop
           className="w-full h-full object-cover"
         ></video>
+        <Link
+          className="absolute top-2 left-2 mt-5 ml-7"
+          to={"/"}
+        >
+          <h1 className="text-white text-lg mt-4 ml-4 font-serif">Locale</h1>
+          {/* <img src={logo} alt="LOCALE" className="w-32" /> */}
+        </Link>
       </div>
       <div className="w-2/3 bg-white flex flex-col justify-center pl-40 pt-28">
         <h1 className="text-md font-sans font-bold mb-4">Sign up to Locale</h1>

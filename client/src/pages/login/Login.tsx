@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { logo } from "../../assets/images";
 
 export const Login = () => {
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex relative">
       <div className="w-1/3 bg-pry relative">
         <video
           src="https://cdn.dribbble.com/uploads/48226/original/b8bd4e4273cceae2889d9d259b04f732.mp4?1689028949"
@@ -11,6 +12,13 @@ export const Login = () => {
           loop
           className="w-full h-full object-cover"
         ></video>
+        <Link
+          className="absolute top-2 left-2 mt-5 ml-7"
+          to={"/"}
+        >
+          <h1 className="text-white text-lg mt-4 ml-4 font-serif">Locale</h1>
+          {/* <img src={logo} alt="LOCALE" className="w-32" /> */}
+        </Link>
       </div>
       <div className="w-2/3 bg-white flex flex-col justify-center pl-40 pt-28">
         <h1 className="text-md font-sans font-bold mb-4">Sign in to your Locale</h1>
