@@ -28,12 +28,12 @@ export default {
         'heroBg': "url('/src/assets/images/hero.png')",
       },
       colors: {
-        'pry': "#EEEEEE",
+        'pry': "#ffffff",
         "sec": "#B8D3AB",
         "sec2": "#F4F4F4",
         "sec3": "#26520A",
-        "sec4": "#19530B",
-        "sec5": "#e1dae4",
+        "interact": "#f8d476",
+        "purple": "#e1dae4",
         "btn": "#122D05",
         "main": "#f8f7f4"
       },

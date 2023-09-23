@@ -8,7 +8,7 @@
     }
     .colgrad{
         @apply bg-gradient-to-r from-[#C63D2F] via-[#E25E3E] via-[#FF9B50] to-[#FFBB5C]
-    }
+    }    
 }
 
 .custom-selection::selection {

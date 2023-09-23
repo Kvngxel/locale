@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function Tag() {
-  const colors = ['bg-red-500', 'bg-sec5', 'bg-green-500', 'bg-yellow-500']; // List of background color classes
+  const colors = ['bg-red-500', 'bg-purple', 'bg-green-500', 'bg-yellow-500']; // List of background color classes
   const [bgColor, setBgColor] = useState(getRandomColor(colors)); // Initial background color class
 
   useEffect(() => {

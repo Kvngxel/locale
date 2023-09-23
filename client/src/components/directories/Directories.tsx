@@ -51,7 +51,7 @@ export const Directories = () => {
   }, []);
 
   return (
-    <div className="mx-auto py-12 px-32 flex flex-col bg-main">
+    <div className="mx-auto pt-32 pb-28 px-32 flex flex-col bg-pry">
       <h1 className="text-lg text-sec4 font-serif self-center mb-20">LOCALE DIRECTORIES</h1>
       <div className="flex justify-evenly gap-10 rounded gap-y-16 pb-10">
         {data &&
