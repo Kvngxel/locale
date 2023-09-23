@@ -9,7 +9,7 @@ export const NavBar = () => {
         <Link className="hover:text-sec3 hover:font-semibold custom-selection pt-1" to={'/about'}>About</Link>
         <Link className="hover:text-sec3 hover:font-semibold custom-selection pt-1" to={'/contact'}>Contact</Link>         
       </nav>
-      <Link className="hover:text-sec3 hover:font-semibold custom-selection" to={'/'}><img src={logo} alt="LOCALE" className="w-32"/></Link>
+      <Link className="hover:text-sec3 hover:font-semibold custom-selection mb-5" to={'/'}><img src={logo} alt="LOCALE" className="w-32"/></Link>
       <input type="text" placeholder="Search..." className="focus:outline-none placeholder:text-gray-500 placeholder:text-sm placeholder:font-light pt-5 rounded-3xl text-center w-[17vw] max-sm:w-3/5 py-3 text-2xs"/>
       <nav className="flex gap-7 text-nxl max-sm:hidden">
         <Link className="hover:text-blue-400 hover:font-semibold text-black custom-selection pt-5" to={'/login'}>Log in</Link>

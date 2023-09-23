@@ -1,4 +1,6 @@
-import { heroImg } from "../../assets/images";
+// import { heroImg } from "../../assets/images";
+// import { dir } from "../../assets/images";
+import { dir1 } from "../../assets/images";
 import { useEffect, useState } from "react";
 
 interface ApiItem {
@@ -20,20 +22,17 @@ export const Directories = () => {
   const [first, setFirst] = useState(0);
   const [from, setFrom] = useState(1);
 
-
   const increase = () =>{
     if(first+6<data.length){
       setFirst(first+6);
       setFrom(from+1)
-    }
-    
+    }    
   } 
   const reduce = () =>{
     if(first>0){
       setFirst(first-6);
       setFrom(from-1)
     }
-
   } 
 
   useEffect(() => {
@@ -48,26 +47,44 @@ export const Directories = () => {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
   }, []);
 
   return (
-    <div className="containr mx-auto py-12 flex flex-col">
-      <h1 className="text-lg text-sec4 self-center mb-20">LOCALE DIRECTORIES</h1>
-      <div className="flex w-full flex-wrap justify-evenly gap-6 rounded gap-y-16">
-
+    <div className="mx-auto py-12 px-32 flex flex-col bg-main">
+      <h1 className="text-lg text-sec4 font-serif self-center mb-20">LOCALE DIRECTORIES</h1>
+      <div className="flex justify-evenly gap-10 rounded gap-y-16 pb-10">
+        {data &&
+          data.slice(first, first + 6).map((company) => (
+            <div key={company.id} className="relative md:w-[40%] w-[45%]">
+              <img
+                src={dir1}
+                // src={heroImg}
+                alt="Directory Image"
+                className="max-w-xs rounded-[30px]"
+              />
+              <div className="absolute inset-0 flex flex-col items-center justify-end bg-opacity-50 text-white pr-5 py-6">
+              <p className="pb-28 text-3xl">{company.dir_name.charAt(0)}</p>
+                <p className="text-sm pb-2">{company.dir_name}</p>
+                {/* <p className="text-sm">{company.id}</p> */}
+                <button className="text-xs">See more</button>
+                {/* <p className="text-xs">See more ...</p> */}
+              </div>
+            </div>
+          ))}
+      </div>      
+      {/* <div className="flex  justify-evenly gap-6 rounded gap-y-16">
         {data && data.slice(first,first+6).map((company) => (
-          <div key={company.id} className="relative md:basis-[40%] basis[45%] rounded-lg basis">
-            <img src={heroImg} alt="" className="w-full rounded-[9px]" />
-            <div className="absolute bottom-0 w-full h-[20%] items-center rounded-[9px] bg-sec flex justify-around">
+          <div key={company.id} className="relative md:basis-[40%] basis[45%] basis">
+            <img src={dir} alt="Directory Image" className="max-w-xs rounded-[30px]" />
+            <div className="">
               <p className="text-sm">{company.dir_name}</p>
               <p className="text-sm">{company.id}</p>
               <p className="text-xs text-white">See more ...</p>
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
       <div className="flex justify-center gap-6 mt-6 items-center"><h1 className="bg-sec aspect-[] rounded py-2 px-4" onClick={reduce}>{'<'}</h1> {data && <h1>{from} of  {Math.ceil(data.length/5)}</h1>} <h1 onClick={increase} className="bg-sec aspect-[] rounded py-2 px-4">{'>'}</h1></div>
     </div>
   );
