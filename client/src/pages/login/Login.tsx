@@ -12,11 +12,11 @@ export const Login = () => {
             </div>
             <div className="basis-[60%] max-sm:basis-[98%] max-sm:mx-auto py-20 flex flex-col items-center colgrad">
                 <h1 className="text-xl font-bold text-white mb-14">LOCALE</h1>
-                <form action="" className="flex flex-col w-[60%] text-white mb-10">
+                <form action="" className="flex flex-col w-[60%] text-black mb-10">
                 <label htmlFor="" className="text-base ">Username:</label>
                 <input type="text" placeholder="enter your username" className="w-full pl-6 py-4 rounded-sm my-6" />
                 <label htmlFor="" className="text-base mt-10">Password:</label>
-                <input type="text" placeholder="enter your password" className="w-full pl-6 py-4 rounded-sm my-6" />
+                <input type="password" placeholder="enter your password" className="w-full pl-6 py-4 rounded-sm my-6" />
                 <input type="submit" value="LOG IN" className="colgrad w-[40%] self-center py-2" />
                 </form>
                 <Link to="">Forgot Password</Link>
