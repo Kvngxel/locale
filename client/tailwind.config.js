@@ -15,6 +15,8 @@ export default {
       lg: ['30px', '21.94px'],
       xl: ['40px', '24.38px'],
       '2xl': ['45px', '50px'],
+      // Nav Icon
+      'nxl':['13px', '11px']
     },
     extend: {
       fontFamily: {
@@ -31,6 +33,7 @@ export default {
         "sec3": "#26520A",
         "sec4": "#19530B",
         "btn": "#122D05",
+        "nav": "#fefefe"
       },
 
     },
