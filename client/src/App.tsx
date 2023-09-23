@@ -4,6 +4,7 @@ import { Contact } from "./pages/Contact";
 import { Mallamfx } from "./pages/Mallamfx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
+import { Register } from "./pages/register/register";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={"Error 404"} />
         </Routes>
       </Router>
