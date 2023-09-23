@@ -15,8 +15,9 @@ export default {
       lg: ['30px', '21.94px'],
       xl: ['40px', '24.38px'],
       '2xl': ['45px', '50px'],
+      '3xl': ['82px', '50px'],
       // Nav Icon
-      'nxl':['13px', '11px']
+      'nxl':['15px', '11px']
     },
     extend: {
       fontFamily: {
@@ -32,8 +33,12 @@ export default {
         "sec2": "#F4F4F4",
         "sec3": "#26520A",
         "sec4": "#19530B",
+        "sec5": "#e1dae4",
         "btn": "#122D05",
-        "nav": "#fefefe"
+        "main": "#f8f7f4"
+      },
+      textColor: {
+        'selection': 'blue', // Customize the color here
       },
 
     },

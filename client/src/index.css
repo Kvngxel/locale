@@ -10,3 +10,8 @@
         @apply bg-gradient-to-r from-[#C63D2F] via-[#E25E3E] via-[#FF9B50] to-[#FFBB5C]
     }
 }
+
+.custom-selection::selection {
+    background-color: #ffecbc; /* Set the background color of the selection */
+    color: black; /* Set the text color of the selection (red in this example) */
+  }
