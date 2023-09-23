@@ -12,6 +12,7 @@ export default {
       xs: ['15px', '16px'],
       sm: ['18px', '20px'],
       base: ['22px', '19.5px'],
+      md: ['26px','22px'],
       lg: ['30px', '21.94px'],
       xl: ['40px', '24.38px'],
       '2xl': ['45px', '50px'],
