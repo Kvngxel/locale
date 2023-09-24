@@ -87,9 +87,9 @@ export const Directories = () => {
       </div> */}
 
       <div className="flex justify-center gap-6 mt-6 items-center">
-        <h1 className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-3 px-6 mx-5 text-white font-semibold mt-4 custom-selection text-sm" onClick={reduce}>{'<'}</h1>
+        <h1 className="bg-[#0d0c22] hover:bg-[#ffffff] hover:text-black border-2 border-transparent hover:border-black rounded-full py-3 px-6 mx-5 text-white font-semibold mt-4 custom-selection text-sm" onClick={reduce}>{'<'}</h1>
         {data && <h1 className="pt-5">{from} of  {Math.ceil(data.length/5)}</h1>}
-        <h1 onClick={increase} className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-3 px-6 mx-5 text-white font-semibold mt-4 custom-selection text-sm">{'>'}</h1>
+        <h1 onClick={increase} className="bg-[#0d0c22] hover:bg-[#ffffff] hover:text-black border-2 border-transparent hover:border-black rounded-full py-3 px-6 mx-5 text-white font-semibold mt-4 custom-selection text-sm">{'>'}</h1>
       </div>
     </div>
   );
