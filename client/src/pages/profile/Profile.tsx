@@ -66,12 +66,6 @@ export const Profile = () => {
             >
               Save
             </button>
-            <p className="py-4 text-center font-light">
-              Already have an account?
-              <Link className="border-b border-transparent hover:border-blue-500 mx-2 font-semibold" to={'/login'}>
-                Sign in
-              </Link>
-            </p>
           </form>
         </div>
       </div>
