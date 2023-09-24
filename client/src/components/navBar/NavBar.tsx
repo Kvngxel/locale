@@ -1,15 +1,25 @@
 import { Link } from "react-router-dom"
+import { logo } from "../../assets/images"
 
 export const NavBar = () => {
   return (
-    <header className="flex justify-around bg-pry pt-8 pb-4 px-[15vw] h-[15vh] shadow-md items-center max-sm:gap-4">
-        <h1 className="text-sec3 text-base font-semibold">LOCALE</h1>
-        <input type="text" placeholder="Search Locale" className="text-center w-[20vw] max-sm:w-3/5 py-2 text-2xs"/>
-        <nav className="flex gap-6 pr-5 text-x max-sm:hidden">
-          <Link className="hover:text-sec3 " to={'/'}>HOME</Link>
-          <Link className="hover:text-sec3 " to={'/about'}>ABOUT</Link>
-          <Link className="hover:text-sec3 " to={'/contact'}>CONTACT</Link>
-        </nav>
+    <header className="flex justify-around bg-main pt-10 pb-4 px-[8vw] h-[15vh] shadow items-center max-sm:gap-4">
+      <nav className="flex gap-7 pr-10 text-nxl max-sm:hidden">
+        <Link className="hover:text-sec3 hover:font-semibold custom-selection pt-1" to={'/'}>Home</Link>
+        <Link className="hover:text-sec3 hover:font-semibold custom-selection pt-1" to={'/about'}>About</Link>
+        <Link className="hover:text-sec3 hover:font-semibold custom-selection pt-1" to={'/contact'}>Contact</Link>         
+      </nav>
+      <Link className="hover:text-sec3 hover:font-semibold custom-selection mb-5" to={'/'}><img src={logo} alt="LOCALE" className="w-32"/></Link>
+      <input type="text"
+        placeholder="Search..."
+        className="focus:outline-none placeholder:text-gray-500 placeholder:text-xs
+          placeholder:font-light pt-3 rounded-3xl text-center w-[17vw] max-sm:w-3/5 py-3 text-xs
+          px-6"
+          />
+      <nav className="flex gap-7 text-nxl max-sm:hidden">
+        <Link className="hover:text-blue-400 hover:font-semibold text-black custom-selection pt-5" to={'/login'}>Log in</Link>
+        <Link className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5 px-7 text-white hover:text-black font-semibold " to={'/register'}>Sign Up</Link>       
+      </nav>     
     </header>
   )
 }
