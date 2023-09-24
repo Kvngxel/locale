@@ -20,12 +20,12 @@ const authUser = asyncHandler(async (req, res) => {
     if (!user) {
       return res.status(400).json({ error: "invalid username" });
     }
-    console.log(user.password);
+    // console.log(user.password);
     const isMatch = await comparePasswords(password, user[0].password);
     console.log(isMatch);
 
     if (!isMatch) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      return res.status(400).json({ error: "Password is not correct" });
     }
 
     // Authentication successful
