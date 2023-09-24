@@ -6,9 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
 import { Register } from "./pages/register/register";
 import { Profile } from "./pages/profile/Profile";
-// import { ErrorPage } from "./pages/Error-page"
-import ErrorPage from "./pages/Error-page"
-
 
 function App() {
 
