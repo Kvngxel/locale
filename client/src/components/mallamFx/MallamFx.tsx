@@ -83,7 +83,13 @@ export const MallamFx = () => {
         </div>
       </div>
       <div className="flex justify-center">
-      <Link className="hover:text-sec3 bg-btn p-2 text-white text-xs " to={'/malamfx'}>See more</Link>
+      <Link className="bg-[#0d0c22] hover:bg-[#ffffff]
+          hover:text-black border-2 border-transparent hover:border-black
+            rounded-full py-5 px-6 mx-5 text-white font-semibold mt-4 custom-selection
+            text-xs"
+        to={'/malamfx'}>
+        See more
+      </Link>
         {/* <button className="bg-btn p-2 text-white text-xs">See more</button> */}
       </div>
     </div>
