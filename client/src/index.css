@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .containr{
+        @apply w-[100%] md:w-[85%] mx-auto;
+    }
+}
 
 .custom-selection::selection {
     background-color: #ffecbc; /* Set the background color of the selection */

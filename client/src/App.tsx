@@ -5,7 +5,7 @@ import { Mallamfx } from "./pages/Mallamfx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
 import { Profile } from "./pages/profile/Profile";
-import { Register } from "./pages/reg/Register";
+import { Register } from "./pages/register/Register";
 function App() {
 
   return (
