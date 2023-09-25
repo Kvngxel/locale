@@ -4,9 +4,8 @@ import { Contact } from "./pages/Contact";
 import { Mallamfx } from "./pages/Mallamfx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
-import { Register } from "./pages/register/Register";
 import { Profile } from "./pages/profile/Profile";
-
+import { Register } from "./pages/reg/Register";
 function App() {
 
   return (
