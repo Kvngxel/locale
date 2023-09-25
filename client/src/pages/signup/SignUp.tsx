@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Register = () => {
+export const SignUp = () => {
   return (
     <div className="h-screen flex relative">
     <div className="w-1/3 bg-pry relative">
