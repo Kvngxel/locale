@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { logo } from "../../assets/images";
-
 export const Login = () => {
   return (
     <div className="h-screen flex relative">

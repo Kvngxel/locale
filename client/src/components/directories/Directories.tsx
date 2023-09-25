@@ -38,7 +38,7 @@ export const Directories = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/directories');
+        const response = await fetch('http://localhost:3000/api/directory/all');
         console.log(response)
         const apiData: ApiItem[] = await response.json();
         setData(apiData);
