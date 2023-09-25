@@ -52,7 +52,7 @@ export const Login = () => {
             </button>
             <p className="py-4 text-center font-light">
               Don't have an account?
-              <Link className="border-b border-transparent hover:border-blue-500 mx-2 font-semibold" to={'/register'}>
+              <Link className="border-b border-transparent hover:border-blue-500 mx-2 font-semibold" to={"/signup"}>
                 Sign up
               </Link>
             </p>

@@ -18,7 +18,7 @@ export const NavBar = () => {
           />
       <nav className="flex gap-7 text-nxl max-sm:hidden">
         <Link className="hover:text-blue-400 hover:font-semibold text-black custom-selection pt-5" to={'/login'}>Log in</Link>
-        <Link className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5 px-7 text-white hover:text-black font-semibold " to={'/register'}>Sign Up</Link>       
+        <Link className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5 px-7 text-white hover:text-black font-semibold " to={'/signup'}>Sign Up</Link>       
       </nav>     
     </header>
   )
