@@ -2,7 +2,7 @@ import Tag  from "./Tag"
 
 export const Hero = () => {
   return (
-    <div className="bg-main py-24 text-center">
+    <div className="bg-main py-10 md:py-24 h-[85vh] text-center">
       <Tag />
       <h1 className="text-3xl px-48 mx-auto leading-3xl font-serif leading-[82px] custom-selection">Welcome to your locale directory</h1>  
       <p className="py-8  text-base custom-selection">Home for all your Locale needs :)</p>
