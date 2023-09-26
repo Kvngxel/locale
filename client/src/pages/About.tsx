@@ -37,7 +37,7 @@ export const About = () => {
             <img src="https://media.istockphoto.com/id/1206439390/photo/silhouette-of-profile-guy-in-shirt-with-white-button-in-aqua-menthe-circle-on-black.webp?s=170667a&w=0&k=20&c=xIcUug38E_KlqT3HjxDYSQE7ZlMyV0y0vKmkXmr016U="
                 alt=""
                 className="rounded-full h-40 w-40 mx-auto my-5" />
-            <p className="pt-2 text-base">Excel</p>
+            <p className="pt-2 text-base">Aliyu Aliyu</p>
             <p className="pt-3">FullStack Developer</p>
             <p className="py-4">Sports Loving Programmer</p>
             <button className="bg-gray-200 hover:bg-gray-300 hover:text-white px-10 py-3 mb-2 mt-4">Github</button>
@@ -46,7 +46,7 @@ export const About = () => {
             <img src="https://media.istockphoto.com/id/1206439390/photo/silhouette-of-profile-guy-in-shirt-with-white-button-in-aqua-menthe-circle-on-black.webp?s=170667a&w=0&k=20&c=xIcUug38E_KlqT3HjxDYSQE7ZlMyV0y0vKmkXmr016U="
                 alt=""
                 className="rounded-full h-40 w-40 mx-auto my-5" />
-            <p className="pt-2 text-base">Excel</p>
+            <p className="pt-2 text-base">David</p>
             <p className="pt-3">FullStack Developer</p>
             <p className="py-4">Sports Loving Programmer</p>
             <button className="bg-gray-200 hover:bg-gray-300 hover:text-white px-10 py-3 mb-2 mt-4">Github</button>
