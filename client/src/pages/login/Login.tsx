@@ -73,7 +73,7 @@ export const Login = () => {
               }}
               value={password}
               type="password"
-              placeholder="Please enter your password"
+              placeholder="*******"
               className="focus:outline-none w-full pl-6 py-4 rounded-xl my-2 border border-gray-300
                 hover:border-red-200 hover:border-2 placeholder:font-light placeholder:text-xs
                 focus:border-red-200 focus:border-2 shadow-sm"
