@@ -14,7 +14,7 @@ export const About = () => {
             </h1>
           </div>    
           <div className='mx-auto md:ml-80' >
-            <p className="text-sm lg:text-sm mt-8 font-extralight">
+            <p className="text-sm lg:text-sm px-10 md:px-0 mt-8 font-extralight">
               Welcome to our Locale, Get to know about us and the product we offer!
             </p>  
           </div>
