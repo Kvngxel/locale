@@ -1,5 +1,36 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 export const Login = () => {
+  // const Navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const Navigate = useNavigate();
+
+
+  
+  async function handleAddTodoSubmit(event:React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    try{
+        const response = await fetch("http://localhost:3000/api/user/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            "email": email,
+            "password": password
+          }),
+        });
+        const data = await response.json()
+        localStorage.setItem("token", JSON.stringify(data));
+        console.log(data)
+        Navigate('/profile')
+       } catch (error) {
+
+    
+    }
+  }
   return (
     <div className="h-screen flex relative">
       <div className="w-1/3 bg-pry relative">
@@ -22,9 +53,13 @@ export const Login = () => {
         <h1 className="text-md font-sans font-bold mb-4">Sign in to your Locale</h1>
         <p className="text-sm font-extralight">Sign in to your account to enjoy world-class Locales</p>
         <div className="py-12">
-          <form action="" className="flex flex-col w-[60%] text-black mb-10">
+          <form onSubmit={handleAddTodoSubmit} className="flex flex-col w-[60%] text-black mb-10">
             <label htmlFor="" className="text-xs font-semibold mb-1">Email:</label>
             <input
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+              value={email}
               type="text"
               placeholder="Please enter your email"
               className="focus:outline-none w-full pl-6 py-4 rounded-xl my-2 border border-gray-300
@@ -33,6 +68,10 @@ export const Login = () => {
             />
             <label htmlFor="" className="text-xs font-semibold mt-5 mb-1">Password:</label>
             <input
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+              value={password}
               type="password"
               placeholder="Please enter your password"
               className="focus:outline-none w-full pl-6 py-4 rounded-xl my-2 border border-gray-300
