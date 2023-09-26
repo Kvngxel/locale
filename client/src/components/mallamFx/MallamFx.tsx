@@ -52,8 +52,8 @@ export const MallamFx = () => {
   ];
   
   return (
-    <div className="w-[50vw] mx-auto p-12">
-      <h1 className="text-center mb-6 text-2xl">MallamFx</h1>
+    <div className="w-[50vw] mx-auto pb-16 pt-5 md:p-12">
+      <h1 className="text-center mb-6 text-lg md:text-2xl">MallamFx</h1>
       <div className="bg-pry py-10 w-full h-[40vh] mb-6 flex item-center  justify-around">
         <div className="px-6 border-l-2 text-base flex flex-col justify-between">
           {rates &&
@@ -90,7 +90,6 @@ export const MallamFx = () => {
         to={'/malamfx'}>
         See more
       </Link>
-        {/* <button className="bg-btn p-2 text-white text-xs">See more</button> */}
       </div>
     </div>
   );
