@@ -51,12 +51,12 @@ export const Login = () => {
           {/* <img src={logo} alt="LOCALE" className="w-32" /> */}
         </Link>
       </div>
-      <div className="md:w-2/3 text-center md:text-left bg-white flex flex-col
+      <div className="md:w-2/3 md:text-left bg-white flex flex-col
         justify-center px-14 md:pl-40 md:pt-28">
-       <Link className="hidden max-sm:block custom-selection pl-24 mb-14" to={'/'}><img src={logo} alt="LOCALE" className="w-32"/></Link>
+       <Link className="hidden max-sm:block custom-selection px-24 mb-14" to={'/'}><img src={logo} alt="LOCALE" className="w-32"/></Link>
 
-        <h1 className="text-md font-sans font-bold mb-4">Sign in to your Locale</h1>
-        <p className="text-sm font-extralight">Sign in to your account to enjoy world-class Locales</p>
+        <h1 className="text-md text-center md:text-left font-sans font-bold mb-4">Sign in to your Locale</h1>
+        <p className="text-sm text-center md:text-left font-extralight">Sign in to your account to enjoy world-class Locales</p>
         <div className="py-12">
           <form onSubmit={handleAddTodoSubmit} className="flex flex-col md:w-[60%] text-black mb-10">
             <label htmlFor="" className="text-xs font-semibold mb-1">Email:</label>

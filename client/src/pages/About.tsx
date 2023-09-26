@@ -7,17 +7,19 @@ export const About = () => {
   return (
       <div>  
         <NavBar />
-        <div className='mx-auto ml-80  mt-60 text-3xl...' >
-          <h1 className="text-lg md:text-xl lg:text-2xl font-sans"> 
-              <b> About Us</b>            
-          </h1>
-        </div>        
-        <p> </p>
-        <div className='mx-auto ml-80' >
-          <p className="text-sm lg:text-sm mt-8 font-extralight">
-             Welcome to our Locale, Get to know about us and the product we offer!
-          </p>  
+        <div className='text-center md:text-left py-14 md:py-0'>
+          <div className='mx-auto mt-40 md:ml-80 md:mt-60 text-3xl' >
+            <h1 className="text-lg md:text-xl lg:text-2xl font-sans"> 
+                <b> About Us</b>            
+            </h1>
+          </div>    
+          <div className='mx-auto md:ml-80' >
+            <p className="text-sm lg:text-sm mt-8 font-extralight">
+              Welcome to our Locale, Get to know about us and the product we offer!
+            </p>  
+          </div>
         </div>
+        
         <hr className="mt-40"/>
         <div className="text-center mt-40">
           <h2 className="text-lg font-inter font-medium">Meet the Team</h2> 
