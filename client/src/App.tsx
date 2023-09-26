@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
 import { UpdateProfile } from "./pages/profile/UpdateProfile";
 import { SignUp } from "./pages/signup/SignUp";
+import { Locale } from "./pages/locale/Locale";
 import { UpdateLocale } from "./pages/locale/UpdateLocale";
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/updateprofile" element={<UpdateProfile />} />
+          <Route path="/locale" element={<Locale />} />
           <Route path="/updatelocale" element={<UpdateLocale />} />
           <Route path="*" element={"Error 404"} />
         </Routes>
