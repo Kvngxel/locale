@@ -51,7 +51,7 @@ export const Directories = () => {
   return (
     <div className="mx-auto pt-32 pb-28 px-10 md:px-32 flex flex-col bg-pry">
       <h1 className="text-md md:text-lg font-serif self-center mb-5 md:mb-20">LOCALE DIRECTORIES</h1>
-      <div className="md:flex md:justify-evenly gap-10 rounded gap-y-16 pt-10 md:pb-10">
+      <div className="md:flex md:justify-evenly gap-10 rounded gap-y-16 py-10 md:pb-10">
         {data &&
           data.slice(first, first + 6).map((company) => (
             <div key={company.id} className="relative pb-10">
@@ -64,7 +64,7 @@ export const Directories = () => {
                 bg-opacity-50 text-white pr-5 py-20 md:py-6">
               <p className="pb-28 text-3xl">{company.dir_name.charAt(0)}</p>
                 <p className="text-sm pb-2">{company.dir_name}</p>
-                <button className="text-xs">See more</button>
+                <button className="text-xs pb-12">See more</button>
               </div>
             </div>
           ))}
