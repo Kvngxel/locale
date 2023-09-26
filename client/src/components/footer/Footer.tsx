@@ -27,7 +27,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="text-[#828282] text-xs font-extralight border-t py-9 bg-main">Copyright @ Locale {currentYear}</div>
+      <div className="text-[#828282] text-xs font-extralight border-t p-7 md:py-9 bg-main">Copyright @ Locale {currentYear}</div>
       
     </div>
   )

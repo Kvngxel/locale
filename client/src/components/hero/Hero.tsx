@@ -2,7 +2,7 @@ import Tag from "./Tag";
 
 export const Hero = () => {
   return (
-    <div className="bg-main py-16 md:py-24 h-[85vh] text-center">
+    <div className="bg-main py-14 md:py-24 h-[85vh] text-center">
       <Tag />
       <h1 className="text-[50px] pt-10 md:pt-0 md:text-3xl px-10 md:px-48 mx-auto
          leading-[55px] font-serif md:leading-[82px]
