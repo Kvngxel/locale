@@ -5,7 +5,9 @@ export const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
   const Navigate = useNavigate();
+
 
 
   
@@ -23,10 +25,19 @@ export const Login = () => {
           }),
         });
         const data = await response.json()
-        localStorage.setItem("token", JSON.stringify(data));
-        console.log(data)
-        Navigate('/profile')
-       } catch (error) {
+        if(data.token){
+          localStorage.setItem("token", JSON.stringify(data));
+          console.log(data)
+          Navigate('/updateprofile')
+        }
+        if(data.error){
+          setError(data.error)
+          console.log(data)
+        }
+
+       } catch (err) {
+        console.log(err)
+        setError("Error Connecting to server")
 
     
     }
@@ -83,6 +94,7 @@ export const Login = () => {
                 Forgot password?
               </Link>
             </p>
+            <p>{error}</p>
             <button
               type="submit"
               className="bg-[#0d0c22] hover:bg-[#ffffff] border-2 border-transparent hover:border-2 hover:border-black rounded-full py-5 px-7 text-white hover:text-black font-semibold mt-4 custom-selection"
