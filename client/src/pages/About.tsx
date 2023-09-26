@@ -7,7 +7,7 @@ export const About = () => {
   return (
       <div>  
         <NavBar />
-        <div className='text-center md:text-left py-14 md:py-0'>
+        <div className='text-center md:text-left py-20 h-[70vh] md:h-auto  md:py-0'>
           <div className='mx-auto mt-40 md:ml-80 md:mt-60 text-3xl' >
             <h1 className="text-lg md:text-xl lg:text-2xl font-sans"> 
                 <b> About Us</b>            
