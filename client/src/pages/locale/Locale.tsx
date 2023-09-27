@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components";
 import { LocaleApi } from "../../types/userTypes";
-
 export const Locale = () => {
     const [locale, setLocale] = useState<LocaleApi | null>(null)
-
     const userDetails = async () => {
         try {
           let token = localStorage.getItem("token");
@@ -18,9 +16,10 @@ export const Locale = () => {
           const userData = await res.json();
           setLocale(userData)
         } catch (err) {
-          console.error("error");
+            console.error("error");
         }
-      };
+    };
+    console.log(locale)
       useEffect(() => {
         userDetails()
         console.log(locale)

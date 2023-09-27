@@ -100,7 +100,7 @@ export const UpdateProfile = () => {
                 First Name:
               </label>
               <input
-                value={user? user.first_name:"Loading user details..."}
+                
                 onChange={(event) => {
                   setfName(event.target.value);
                 }}
@@ -126,6 +126,7 @@ export const UpdateProfile = () => {
                 Email:
               </label>
               <input
+                value={user? user.email:"Loading user email..."}
                 disabled
                 type="email"
                 placeholder="please enter your email"

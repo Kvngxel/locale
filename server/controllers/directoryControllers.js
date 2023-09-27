@@ -76,8 +76,8 @@ const directorydetails = asyncHandler(async (req, res) => {
   const id = req.user.id;
   try {
     const directories = await sql`SELECT * from directory WHERE user_id = ${id} `;
-    if (directories) {
-      res.status(201).send(directories);
+    if (directories && directories.length>0) {
+      res.status(200).json(directories[0]);
     } else {
       res.status(404).send("An error occurred");
     }
