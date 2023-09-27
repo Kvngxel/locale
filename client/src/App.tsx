@@ -12,6 +12,7 @@ import { Login } from "./pages/login/Login";
 import { UpdateProfile } from "./pages/profile/UpdateProfile";
 import { SignUp } from "./pages/signup/SignUp";
 import { Locale } from "./pages/locale/Locale";
+import { Profile } from "./pages/profile/Profile"
 import { UpdateLocale } from "./pages/locale/UpdateLocale";
 import { useEffect, useState } from "react";
 
@@ -47,12 +48,14 @@ function App() {
               isLoggedIn ? <UpdateProfile /> : <Navigate to={"/contact"} />
             }
           />
+          <Route path="/" element={<Home />} />
+          <Route path="/malamfx" element={<Mallamfx />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/locale" element={<Locale />} />
           <Route path="/updatelocale" element={<UpdateLocale />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/malamfx" element={<Mallamfx />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={"() => <div>Error 404</div>"} />
+          <Route path="*" element={"Error 404"} />
         </Routes>
       </Router>
     </>
