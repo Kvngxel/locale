@@ -7,7 +7,7 @@ const Dropdown = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("isComplete");
-    Navigate("/");
+    Navigate("/login");
   };
   useEffect(() => {
     setIsLoggedin(!!localStorage.getItem("token")); // Convert to boolean using double negation !!
