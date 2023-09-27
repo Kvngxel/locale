@@ -8,7 +8,7 @@ router.post("/login", authUser);
 router
   .route("/")
   .post(registerUser)
-  .get(userProfile)
+  .get(protect, userProfile)
   .put(protect, updateProfile)
   .delete(protect, deleteUser);
 

@@ -29,11 +29,13 @@ const authUser = asyncHandler(async (req, res) => {
     }
 
     // Authentication successful
+    const isComplete = !!user[0].updated_at;
+
     const userPayload = {
         id: user[0].id
       };
-    
-    return res.status(201).json({ token: generateToken(userPayload) });
+      
+      return res.status(201).json({ token: generateToken(userPayload), isComplete });
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -54,7 +56,7 @@ const registerUser = asyncHandler(async (req, res) => {
       const userPayload = {
         id: user[0].id
       };
-      return res.status(201).json({ token: generateToken(userPayload) });
+      return res.status(201).json({ token: generateToken(userPayload), isComplete:false });
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({

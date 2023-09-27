@@ -1,6 +1,6 @@
 export const Comment = () => {
   return (
-    <div className="bg-interact text-center mb-10 pt-24 md:pb-12">
+    <div className="bg-interact text-center pt-24 pb-12">
       <div>
         <h2 className="text-2xl font-serif">Interact</h2>
         <p className="py-5 text-sm">Drop a like or dislike and comment :)</p>
@@ -18,5 +18,17 @@ export const Comment = () => {
         </div>
       </div>
     </div>
+    
+    // <div className="md:px-[5vw] lg:bg-main py-4">
+    //   <div className="px-24">
+    //     <form className="w-[100%] mx-auto md:p-12 flex flex-col gap-8">
+    //       <h1 className="bg-white text-center m-2 w-3/4 py-4 md:w-[35%]">Anonymous Comments:</h1>
+    //       <div className="w-[95%] mx-auto bg-white">
+    //         <textarea name="" id="" className="w-full p-4" rows={10} placeholder="please leave a comment..." />
+    //         <button className="bg-btn p-2 text-white float-right" type="submit">Comment</button>
+    //       </div>
+    //     </form>
+    //   </div>      
+    // </div> 
   )
 }
