@@ -114,11 +114,12 @@ export const Mallamfx = () => {
 
     </div>
 
- <div className='pl-20 ml-20 pt-5'>
+ <div className='pl-16 ml-20 pt-5'>
 
-    <div className="w-[148px] h-[43px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 rounded-md shadow">
-    <div className="text-center text-white text-[18px] font-semibold font-['Inter']">EXCHANGE</div>
-    </div>
+ <div class="flex justify-center items-center w-[148px] h-[43px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 rounded-md shadow">
+  <div class="text-white text-[18px] font-semibold font-['Inter']">EXCHANGE</div>
+</div>
+
 
  </div>
     <div className="text-white text-s font-medium font-['Inter'] pb-5 ">Result:</div>
