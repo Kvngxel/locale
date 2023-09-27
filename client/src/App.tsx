@@ -4,6 +4,7 @@ import { Contact } from "./pages/Contact";
 import { Mallamfx } from "./pages/Mallamfx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/login/Login";
+import { Profile } from "./pages/profile/Profile"
 import { UpdateProfile } from "./pages/profile/UpdateProfile";
 import { SignUp } from "./pages/signup/SignUp";
 import { Locale } from "./pages/locale/Locale";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/updateprofile" element={<UpdateProfile />} />
           <Route path="/locale" element={<Locale />} />
           <Route path="/updatelocale" element={<UpdateLocale />} />

@@ -51,10 +51,10 @@ export const Directories = () => {
   return (
     <div className="mx-auto pt-32 pb-28 px-10 md:px-32 flex flex-col bg-pry">
       <h1 className="text-md md:text-lg font-serif self-center mb-5 md:mb-20">LOCALE DIRECTORIES</h1>
-      <div className="md:flex md:justify-evenly gap-10 rounded gap-y-16 py-10 md:pb-10">
+      <div className="md:flex md:justify-evenly gap-10 rounded gap-y-16 py-10 md:pb-10 md:w-[65vw] md:mx-auto md:flex-wrap ">
         {data &&
           data.slice(first, first + 6).map((company) => (
-            <div key={company.id} className="relative pb-10">
+            <div key={company.id} className="relative pb-10 md:basis[30%]">
               <img
                 src={dir1}
                 alt="Directory Image"
