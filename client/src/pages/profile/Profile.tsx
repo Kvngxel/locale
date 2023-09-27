@@ -22,10 +22,9 @@ export const Profile = () => {
         </div>
         <div className="border w-[30%] mx-auto "></div>
         <div className="py-10 text-center">
-            <p className='py-24'>My Little description</p>
+            <p className='py-24'>My Little description :) </p>
         </div>
         <div className="border w-[30%] mx-auto"></div>
-
         <Footer />
     </div>
   )
