@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Dropdown = () => {
   const [isLoggedIn, setIsLoggedin] = useState(true);
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('isComplete');
-    Navigate('/')
-  }
+    localStorage.removeItem("token");
+    localStorage.removeItem("isComplete");
+    Navigate("/");
+  };
   useEffect(() => {
     setIsLoggedin(!!localStorage.getItem("token")); // Convert to boolean using double negation !!
   }, []);
@@ -21,17 +21,20 @@ const Dropdown = () => {
 
   // Function to close the dropdown when clicking outside
   const handleClickOutside = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
       setIsOpen(false);
     }
   };
 
   useEffect(() => {
     // Add an event listener when the component mounts
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       // Remove the event listener when the component unmounts
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -43,42 +46,84 @@ const Dropdown = () => {
       >
         <div
           className={`w-6 h-0.5 bg-gray-800 my-1 transition-transform 
-            ${ isOpen ? 'rotate-45 translate-y-1.5' : ''}`}
+            ${isOpen ? "rotate-45 translate-y-1.5" : ""}`}
         ></div>
         <div
           className={`w-6 h-0.5 bg-gray-800 my-1 transition-opacity 
-            ${ isOpen ? 'opacity-0' : ''}`}
+            ${isOpen ? "opacity-0" : ""}`}
         ></div>
         <div
           className={`w-6 h-0.5 bg-gray-800 my-1 transition-transform 
-            ${ isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+            ${isOpen ? "-rotate-45 -translate-y-1.5" : ""}`}
         ></div>
       </button>
       {isOpen && (
-        <div className="absolute top-14  right-0 w-[300px] mt-2 bg-white border
-            border-gray-300 shadow-md rounded">
+        <div
+          className="absolute top-14  right-0 w-[300px] mt-2 bg-white border
+            border-gray-300 shadow-md rounded"
+        >
           <ul>
             <li>
-              <Link className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
-                hover:font-semibold custom-selection" to={'/'}>Home</Link>
+              <Link
+                className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection"
+                to={"/"}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
-                hover:font-semibold custom-selection" to={'/about'}>About</Link>
+              <Link
+                className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection"
+                to={"/about"}
+              >
+                About
+              </Link>
             </li>
             <li>
-              <Link className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
-                hover:font-semibold custom-selection" to={'/contact'}>Contact</Link> 
+              <Link
+                className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection"
+                to={"/contact"}
+              >
+                Contact
+              </Link>
             </li>
-            <hr/>
-            <li>
-              {
-                isLoggedIn? <button onClick={handleLogout} className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
-                hover:font-semibold custom-selection">Log out</button>:<Link className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
-                hover:font-semibold custom-selection" to={'/login'}>Log in</Link>
-              }
-              
-            </li>
+            <hr />
+            {isLoggedIn ? (
+              <>
+                {" "}
+                <li>
+                  <Link
+                    className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection"
+                    to={"/profile"}
+                  >
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection"
+                  >
+                    Log out
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link
+                  className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection"
+                  to={"/login"}
+                >
+                  Log in
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       )}
