@@ -12,7 +12,7 @@ import { Login } from "./pages/login/Login";
 import { UpdateProfile } from "./pages/profile/UpdateProfile";
 import { SignUp } from "./pages/signup/SignUp";
 import { Locale } from "./pages/locale/Locale";
-import { Profile } from "./pages/profile/Profile"
+import { Profile } from "./pages/profile/Profile";
 import { UpdateLocale } from "./pages/locale/UpdateLocale";
 import { useEffect, useState } from "react";
 
@@ -23,7 +23,6 @@ function App() {
     setIsLoggedin(!!localStorage.getItem("token")); // Convert to boolean using double negation !!
     setCompleteProfile(!!localStorage.getItem("isComplete"));
   }, [Navigate, localStorage]);
-
 
   return (
     <>
@@ -37,13 +36,21 @@ function App() {
             path="/signup"
             element={isLoggedIn ? <Navigate to="/" /> : <SignUp />}
           />
-          <Route path="/" element={isLoggedIn?completeProfile?<Home/>:<Navigate to="updateprofile"/>:<Home />} />
           <Route
-            path="/updateprofile"
+            path="/"
             element={
-              isLoggedIn ? <UpdateProfile /> : <Navigate to={"/contact"} />
+              isLoggedIn ? (
+                completeProfile ? (
+                  <Home />
+                ) : (
+                  <Navigate to="updateprofile" />
+                )
+              ) : (
+                <Home />
+              )
             }
           />
+          <Route path="/updateprofile" element={<UpdateProfile />} />
           <Route path="/" element={<Home />} />
           <Route path="/malamfx" element={<Mallamfx />} />
           <Route path="/about" element={<About />} />
