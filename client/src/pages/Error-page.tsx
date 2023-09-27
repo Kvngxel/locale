@@ -14,5 +14,4 @@ import { useRouteError } from "react-router-dom";
     </div>
   );
 }
-
 export default ErrorPage

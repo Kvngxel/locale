@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../../assets/images"
 
 export const Login = () => {
-  // const Navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);

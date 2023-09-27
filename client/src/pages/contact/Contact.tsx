@@ -1,9 +1,8 @@
-import { Footer } from '../components';
-import { NavBar } from '../components';
+import { Footer } from '../../components';
+import { NavBar } from '../../components';
 
 export const Contact = () => {
-    return (
-        
+    return (        
         <div id="contact">
           <div>
           <NavBar />
@@ -20,11 +19,8 @@ export const Contact = () => {
               </div>
             </div>
             <hr className="my-20"/>
-
           <Footer />
           </div>
         </div>
       );
     }
-
-

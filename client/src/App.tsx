@@ -1,6 +1,6 @@
 import { Home } from "./pages/home/Home";
-import { About } from "./pages/About";
-import { Contact } from "./pages/Contact";
+import { About } from "./pages/about/About";
+import { Contact } from "./pages/contact/Contact";
 import { Mallamfx } from "./pages/Mallamfx";
 import {
   BrowserRouter as Router,
