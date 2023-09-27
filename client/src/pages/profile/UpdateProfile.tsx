@@ -105,6 +105,7 @@ export const UpdateProfile = () => {
                   setfName(event.target.value);
                 }}
                 type="text"
+                required
                 placeholder="please enter your first name"
                 className="focus:outline-none w-full pl-6 py-4 rounded-xl my-2 border border-gray-300
                         hover:border-red-200 hover:border-2 placeholder:font-light placeholder:text-xs
@@ -163,6 +164,9 @@ export const UpdateProfile = () => {
               <h1>{error}</h1>
               <button
                 type="submit"
+                onClick={() => {
+                  Navigate("/profile");
+                }}
                 className="bg-[#0d0c22] hover:bg-[#ffffff] border-2 border-transparent
                         hover:border-2 hover:border-black rounded-full py-5 px-7 text-white
                         hover:text-black font-semibold mt-7 custom-selection"
