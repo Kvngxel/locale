@@ -51,43 +51,43 @@ export const Mallamfx = () => {
     <div className="w-[351px] h-[595px] bg-stone-50 shadow" >
     <div className="text-center text-black text-[40px] font-bold font-['Inter']">PAIRS</div>
     <div className= " pl-10 pt-10">
-    <div class="flex items-center">
+    <div className="flex items-center">
      <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
      <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1500.471 ▲</div>
 </div>
-  <div class="flex items-center">
+  <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
               <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
  </div>
-<div class="flex items-center">
+<div className="flex items-center">
                 <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
                 <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1501360.471 ▲</div>
 </div>
-<div class="flex items-center">
+<div className="flex items-center">
                 <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
                 <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1501360.471 ▲</div>
 </div>
-<div class="flex items-center">
+<div className="flex items-center">
                 <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
                 <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1501360.471 ▲</div>
 </div>
-<div class="flex items-center">
+<div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
               <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
  </div>
- <div class="flex items-center">
+ <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
               <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
  </div>
- <div class="flex items-center">
+ <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
               <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
  </div>
- <div class="flex items-center">
+ <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
               <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
  </div>
- <div class="flex items-center">
+ <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
               <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
  </div>
@@ -100,13 +100,13 @@ export const Mallamfx = () => {
 
     <div className='pl-5'>
     <div className="text-white text-s font-small font-['Inter']">From:</div>
-    <div class="flex items-center pt-5 pt-5">
+    <div className="flex items-center pt-5 pt-5">
            <div className="w-[51px] h-[48px] bg-green-900 rounded" />
            <div className="w-[334px] h-[48px] bg-neutral-50 rounded border border-neutral-400" />            
      </div>
     
     <div className="text-white text-s font-medium font-['Inter'] pt-5">To:</div>
-    <div class="flex items-center pt-5">
+    <div className="flex items-center pt-5">
         <div className="w-[51px] h-[48px] bg-green-900 rounded" />
         <div className="w-[334px] h-[48px] bg-neutral-50 rounded border border-neutral-400" />           
      </div>
@@ -116,8 +116,8 @@ export const Mallamfx = () => {
 
  <div className='pl-16 ml-20 pt-5'>
 
- <div class="flex justify-center items-center w-[148px] h-[43px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 rounded-md shadow">
-  <div class="text-white text-[18px] font-semibold font-['Inter']">EXCHANGE</div>
+ <div className="flex justify-center items-center w-[148px] h-[43px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 rounded-md shadow">
+  <div className="text-white text-[18px] font-semibold font-['Inter']">EXCHANGE</div>
 </div>
 
 
