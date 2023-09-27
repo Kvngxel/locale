@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components";
 import { LocaleApi } from "../../types/userTypes";
-export const Locale = () => {
+export const UserLocale = () => {
     const [locale, setLocale] = useState<LocaleApi | null>(null)
     const userDetails = async () => {
         try {
@@ -33,24 +33,24 @@ export const Locale = () => {
                 <h1 className="text-lg pt-20 pb-7 font-semibold">{locale?locale.dir_name:"Loading Directory Details"}</h1>
                 <p className="text-sm">{locale?locale.dir_name:"Loading Directory Details"}</p>
             </div>
-            <img className="text-center w-[60vw]  mx-auto mt-10 rounded-sm " src={locale?locale.profile_image:"Loading Directory Details"}/>
+            <div className="text-center w-[90vw] py-32 mx-auto mt-10 bg-main rounded-sm ">Banner Image</div>
             <div className="mx-24 mt-20 text-center">
                 <h1 className="text-md pb-7 font-semibold">Address:</h1>
-                <p className="text-sm">{locale?locale.address:"Loading Directory Details"}</p>
+                <p className="text-sm">Address</p>
             </div>
             <div className="mx-24 my-10 text-center">
                 <h1 className="text-md pb-7 font-semibold">Locale Email:</h1>
-                <p className="text-sm">{locale?locale.directory_email:"Loading Directory Details"}</p>
+                <p className="text-sm">example@example.com</p>
             </div>
             <div className="mx-24 my-10 text-center">
                 <h1 className="text-md mb-5 font-semibold">Locale Telephone:</h1>
-                <p className="text-sm">{locale?locale.telephone:"Loading Directory Details"}</p>
+                <p className="text-sm">+000</p>
             </div>
             <div className="mx-24 my-10 text-center">
                 <h1 className="text-md mb-5 font-semibold">Description:</h1>
-                <p className="text-sm">{locale?locale.description:"Loading Directory Details"}</p>
+                <p className="text-sm">My Description</p>
             </div>
         </div>
     </div>
   );
-};
+}
