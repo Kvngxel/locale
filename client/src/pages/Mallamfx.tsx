@@ -125,7 +125,7 @@ export const Mallamfx = () => {
     <div className="text-white text-s font-medium font-['Inter'] pb-5 ">Result:</div>
     <div className="w-[434px] h-[48px] bg-neutral-50 rounded border border-neutral-400 " />
     <div className="text-center text-black text-s font-normal font-['Inter'] leading-[20px] pt-5 ">Nigerian Naira<br/>to<br/>United States Dollar</div>
-    <div className="text-center text-black text-[15px] font-normal font-['Inter'] leading-[30px]">Last updated Sep 13, 2023 22:32 UTC</div>
+    <div className="text-center text-black text-[15px] font-normal font-['Inter'] leading-[30px]">Last updated Sep 27, 2023 22:32 UTC</div>
     
   </div>
    
