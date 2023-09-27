@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,8 +17,8 @@ import { Profile } from "./pages/profile/Profile";
 import { UpdateLocale } from "./pages/locale/UpdateLocale";
 
 function App() {
-  const [completeProfile, setCompleteProfile] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [completeProfile, setCompleteProfile] = useState(Boolean);
+  const [isLoggedIn, setIsLoggedIn] = useState(Boolean);
 
   useEffect(() => {
     setIsLoggedIn(!!localStorage.getItem("token"));
