@@ -49,27 +49,26 @@ export const Directories = () => {
   }, []);
 
   return (
-    <div className="mx-auto pt-32 pb-28 px-10 md:px-32 flex flex-col bg-pry">
-      <h1 className="text-md md:text-lg font-serif self-center mb-5 md:mb-20">LOCALE DIRECTORIES</h1>
-      <div className="md:flex md:justify-evenly gap-10 rounded gap-y-16 py-10 md:pb-10 md:w-[65vw] md:mx-auto md:flex-wrap ">
+    <div className="mx-auto pt-32 pb-28 px-32 flex flex-col bg-pry">
+      <h1 className="text-lg text-sec4 font-serif self-center mb-20">LOCALE DIRECTORIES</h1>
+      <div className="flex justify-evenly gap-10 rounded gap-y-16 pb-10">
         {data &&
           data.slice(first, first + 6).map((company) => (
-            <div key={company.id} className="relative pb-10 md:basis[30%]">
+            <div key={company.id} className="relative md:w-[40%] w-[45%]">
               <img
                 src={dir1}
                 alt="Directory Image"
                 className="max-w-xs rounded-[30px]"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-end
-                bg-opacity-50 text-white pr-5 py-20 md:py-6">
+              <div className="absolute inset-0 flex flex-col items-center justify-end bg-opacity-50 text-white pr-5 py-6">
               <p className="pb-28 text-3xl">{company.dir_name.charAt(0)}</p>
                 <p className="text-sm pb-2">{company.dir_name}</p>
-                <button className="text-xs pb-12">See more</button>
+                <button className="text-xs">See more</button>
               </div>
             </div>
           ))}
       </div>   
-      <div className="flex justify-center gap-6 md:mt-6 items-center">
+      <div className="flex justify-center gap-6 mt-6 items-center">
         <h1 className="bg-[#0d0c22] hover:bg-[#ffffff] hover:text-black border-2 border-transparent hover:border-black rounded-full py-3 px-6 mx-5 text-white font-semibold mt-4 custom-selection text-sm" onClick={reduce}>{'<'}</h1>
         {data && <h1 className="pt-5">{from} of  {Math.ceil(data.length/5)}</h1>}
         <h1 onClick={increase} className="bg-[#0d0c22] hover:bg-[#ffffff]

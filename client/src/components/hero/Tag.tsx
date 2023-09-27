@@ -26,9 +26,7 @@ function Tag() {
   }
 
   return (
-    <div className={`custom-selection rounded-3xl mx-5 md:mx-auto max-w-md
-      font-serif font-semibold text-sm mt-5 md:mt-0 md:text-sm py-3 mb-10 md:mb-16 ${bgColor}
-      transition-all duration-1000 ease-in-out`}>
+    <div className={`custom-selection rounded-3xl mx-auto max-w-md font-serif font-semibold text-sm py-3 mb-16 ${bgColor} transition-all duration-1000 ease-in-out`}>
       Over 2000 locales to choose from!
     </div>
   );
