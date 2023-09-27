@@ -1,13 +1,20 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { logo } from "../../assets/images"
 import  Dropdown  from "./Dropdown"
+import { useEffect, useState } from "react";
 
 
 export const NavBar = () => {
-  const handleLogout = () => {
+  const [isLoggedIn, setIsLoggedin] = useState(true);
+  const Navigate = useNavigate()
+  const handleLogout = async() => {
     localStorage.removeItem('token');
     localStorage.removeItem('isComplete');
+    Navigate('/')
   }
+  useEffect(() => {
+    setIsLoggedin(!!localStorage.getItem("token")); // Convert to boolean using double negation !!
+  }, []);
   return (
     <header className="flex justify-around bg-main pt-10 pb-4 px-[8vw] h-[15vh] shadow items-center max-sm:gap-4">
     <nav className="flex gap-7 pr-10 text-nxl max-sm:hidden">
@@ -23,10 +30,19 @@ export const NavBar = () => {
         px-6"
         />
     <nav className="flex gap-7 text-nxl max-sm:hidden">
-      <Link className="hover:text-blue-400 hover:font-semibold text-black custom-selection pt-5" to={'/login'}>Log in</Link>
-      <Link className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5 px-7 text-white hover:text-black font-semibold " to={'/signup'}>Sign Up</Link>
+      { isLoggedIn?
+      <>
       <button onClick={handleLogout} className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full
         py-5 px-7 text-white hover:text-black font-semibold" >Log out</button>       
+      </>
+      :
+      <>
+      <Link className="hover:text-blue-400 hover:font-semibold text-black custom-selection pt-5" to={'/login'}>Log in</Link>
+      <Link className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5 px-7 text-white hover:text-black font-semibold " to={'/signup'}>Sign Up</Link>
+      </>
+
+      }
+      
     </nav>
     <div className="hidden max-sm:block">
       <Dropdown />

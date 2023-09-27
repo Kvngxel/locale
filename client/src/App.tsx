@@ -20,13 +20,9 @@ function App() {
   const [completeProfile, setCompleteProfile] = useState(true);
   const [isLoggedIn, setIsLoggedin] = useState(true);
   useEffect(() => {
-    let token = localStorage.getItem("token");
-    let isComplete = localStorage.getItem("isComplete");
-    setIsLoggedin(!!token); // Convert to boolean using double negation !!
-    setCompleteProfile(!!isComplete);
-    console.log({ token: token });
-    console.log({ one: isLoggedIn });
-  }, [Navigate]);
+    setIsLoggedin(!!localStorage.getItem("token")); // Convert to boolean using double negation !!
+    setCompleteProfile(!!localStorage.getItem("isComplete"));
+  }, [Navigate, localStorage]);
 
 
   return (

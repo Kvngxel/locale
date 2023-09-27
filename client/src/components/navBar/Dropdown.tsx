@@ -1,7 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Dropdown = () => {
+  const [isLoggedIn, setIsLoggedin] = useState(true);
+  const Navigate = useNavigate()
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('isComplete');
+    Navigate('/')
+  }
+  useEffect(() => {
+    setIsLoggedin(!!localStorage.getItem("token")); // Convert to boolean using double negation !!
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -62,8 +72,12 @@ const Dropdown = () => {
             </li>
             <hr/>
             <li>
-              <Link className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+              {
+                isLoggedIn? <button onClick={handleLogout} className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
+                hover:font-semibold custom-selection">Log out</button>:<Link className="block px-10 pt-5 pb-4 text-gray-800 hover:bg-gray-200 hover:text-sec3
                 hover:font-semibold custom-selection" to={'/login'}>Log in</Link>
+              }
+              
             </li>
           </ul>
         </div>
