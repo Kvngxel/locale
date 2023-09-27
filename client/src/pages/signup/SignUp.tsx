@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { logo } from "../../assets/images"
 
 export const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -45,7 +46,7 @@ export const SignUp = () => {
 
   return (
     <div className="h-screen flex relative">
-      <div className="w-1/3 bg-pry relative">
+      <div className="w-1/3 bg-pry relative max-sm:hidden">
         <video
           src="https://cdn.dribbble.com/uploads/48292/original/30fd1f7b63806eff4db0d4276eb1ac45.mp4?1689187515"
           autoPlay
@@ -53,20 +54,23 @@ export const SignUp = () => {
           loop
           className="w-full h-full object-cover"
         ></video>
-        <Link className="absolute top-2 left-2 mt-5 ml-7" to={"/"}>
+        <Link
+          className="absolute top-2 left-2 mt-5 ml-7"
+          to={"/"}
+        >
           <h1 className="text-white text-lg mt-4 ml-4 font-serif">Locale</h1>
-          {/* <img src={logo} alt="LOCALE" className="w-32" /> */}
         </Link>
       </div>
-      <div className="w-2/3 bg-white flex flex-col justify-center pl-40 pt-28">
-        <h1 className="text-md font-sans font-bold mb-4">Sign up to Locale</h1>
-        <p className="text-sm font-extralight">
-          Sign up an account with us today
-        </p>
+      <div className="md:w-2/3 md:text-left bg-white flex flex-col
+          justify-center px-14 md:pl-40 md:pt-28">
+       <Link className="hidden max-sm:block custom-selection px-20 mb-14" to={'/'}><img src={logo} alt="LOCALE" className="w-32"/></Link>
+
+        <h1 className="text-md text-center md:text-left font-sans font-bold mb-4">Sign up to Locale</h1>
+        <p className="text-sm text-center md:text-left font-extralight">Sign up an account with us today</p>
         <div className="py-12">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col w-[60%] text-black mb-10"
+            className="flex flex-col md:w-[60%] text-black mb-10"
           >
             <label htmlFor="" className="text-xs font-semibold mb-1">
               Email:
