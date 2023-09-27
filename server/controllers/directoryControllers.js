@@ -73,9 +73,9 @@ const deleteDirectory = asyncHandler(async (req, res) => {
   }
 });
 const directorydetails = asyncHandler(async (req, res) => {
-  const { id } = req.body;
+  const id = req.user.id;
   try {
-    const directories = await sql`SELECT * from directory WHERE id = ${id} `;
+    const directories = await sql`SELECT * from directory WHERE user_id = ${id} `;
     if (directories) {
       res.status(201).send(directories);
     } else {

@@ -23,7 +23,7 @@ router.get("/all", allDirectories);
 router
   .route("/")
   .post(protect, createDirectory)
-  .get(directorydetails)
+  .get(protect, directorydetails)
   .put(protect, updateDirectory)
   .delete(protect, deleteDirectory);
 router
