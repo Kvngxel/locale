@@ -4,6 +4,7 @@ import { Hero } from "./hero/Hero";
 import { MallamFx } from "./mallamFx/MallamFx";
 import { Comment } from "./comment/Comment";
 import { Directories } from "./directories/Directories";
+// import { R } from "./directories/Directories";
 export {
   NavBar,
   Footer,
@@ -11,4 +12,5 @@ export {
   MallamFx,
   Comment,
   Directories,
+  // RootLayout,
 };
