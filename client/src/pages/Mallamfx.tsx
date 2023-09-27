@@ -101,7 +101,7 @@ export const Mallamfx = () => {
 
     <div className='pl-5'>
     <div className="text-white text-s font-small font-['Inter']">From:</div>
-    <div className="flex items-center pt-5 pt-5">
+    <div className="flex items-center pt-5">
            <div className="w-[51px] h-[48px] bg-green-900 rounded" />
            <div className="w-[334px] h-[48px] bg-neutral-50 rounded border border-neutral-400" />            
      </div>
