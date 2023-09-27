@@ -1,6 +1,6 @@
 import { NavBar } from '../components';
 import { Footer } from '../components';
-import Api from '../components/API/Api';
+// import Api from '../components/API/Api';
 
 
 export const Mallamfx = () => {
