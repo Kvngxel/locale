@@ -50,17 +50,84 @@ export const Mallamfx = () => {
   <div className="flex justify-center">
     <div className="w-[351px] h-[595px] bg-stone-50 shadow" >
     <div className="text-center text-black text-[40px] font-bold font-['Inter']">PAIRS</div>
-    <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
-    <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1500.471 ▲</div>
+    <div className= " pl-10 pt-10">
+    <div class="flex items-center">
+     <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
+     <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1500.471 ▲</div>
+</div>
+  <div class="flex items-center">
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
+ </div>
+<div class="flex items-center">
+                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1501360.471 ▲</div>
+</div>
+<div class="flex items-center">
+                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1501360.471 ▲</div>
+</div>
+<div class="flex items-center">
+                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">ETH/USD</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1501360.471 ▲</div>
+</div>
+<div class="flex items-center">
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
+ </div>
+ <div class="flex items-center">
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
+ </div>
+ <div class="flex items-center">
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
+ </div>
+ <div class="flex items-center">
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
+ </div>
+ <div class="flex items-center">
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">NGN/CAD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 578.0347 ▼</div>
+ </div>
+    </div>
+
     </div>
     <div className="w-[539px] h-[595px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 shadow mb-40">
     <div className="text-center text-white text-[40px] font-bold font-['Inter']">Exchange</div>
-    <div className="text-white text-xl font-small font-['Inter']">From:</div>
-    <div className="w-[434px] h-[58px] bg-neutral-50 rounded border border-neutral-400" />
-    <div className="text-white text-xl font-medium font-['Inter']">To:</div>
-    <div className="w-[434px] h-[58px] bg-neutral-50 rounded border border-neutral-400" />
-    <div className="w-[148px] h-[43px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 rounded-md shadow" />
+  <div className=" ml-10 pl-5 pt-10">
+
+    <div className='pl-5'>
+    <div className="text-white text-s font-small font-['Inter']">From:</div>
+    <div class="flex items-center pt-5 pt-5">
+           <div className="w-[51px] h-[48px] bg-green-900 rounded" />
+           <div className="w-[334px] h-[48px] bg-neutral-50 rounded border border-neutral-400" />            
+     </div>
+    
+    <div className="text-white text-s font-medium font-['Inter'] pt-5">To:</div>
+    <div class="flex items-center pt-5">
+        <div className="w-[51px] h-[48px] bg-green-900 rounded" />
+        <div className="w-[334px] h-[48px] bg-neutral-50 rounded border border-neutral-400" />           
+     </div>
+
+
+    </div>
+
+ <div className='pl-20 ml-20 pt-5'>
+
+    <div className="w-[148px] h-[43px] bg-gradient-to-r from-red-600 via-red-500 to-orange-300 rounded-md shadow">
+    <div className="text-center text-white text-[18px] font-semibold font-['Inter']">EXCHANGE</div>
+    </div>
+
+ </div>
+    <div className="text-white text-s font-medium font-['Inter'] pb-5 ">Result:</div>
+    <div className="w-[434px] h-[48px] bg-neutral-50 rounded border border-neutral-400 " />
+    <div className="text-center text-black text-s font-normal font-['Inter'] leading-[20px] pt-5 ">Nigerian Naira<br/>to<br/>United States Dollar</div>
     <div className="text-center text-black text-[15px] font-normal font-['Inter'] leading-[30px]">Last updated Sep 13, 2023 22:32 UTC</div>
+    
+  </div>
+   
       </div> 
   </div>
   </div>
