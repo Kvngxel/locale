@@ -9,6 +9,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Login } from "./pages/login/Login";
+import { Profile } from "./pages/profile/Profile"
 import { UpdateProfile } from "./pages/profile/UpdateProfile";
 import { SignUp } from "./pages/signup/SignUp";
 import { Locale } from "./pages/locale/Locale";

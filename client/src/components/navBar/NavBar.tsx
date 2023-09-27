@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { logo } from "../../assets/images"
+import  Dropdown  from "./Dropdown"
 
 export const NavBar = () => {
   return (
@@ -13,13 +14,16 @@ export const NavBar = () => {
       <input type="text"
         placeholder="Search..."
         className="focus:outline-none placeholder:text-gray-500 placeholder:text-xs
-          placeholder:font-light pt-3 rounded-3xl text-center w-[17vw] max-sm:w-3/5 py-3 text-xs
+          placeholder:font-light pt-3 rounded-3xl text-center w-[17vw] max-sm:hidden py-3 text-xs
           px-6"
           />
       <nav className="flex gap-7 text-nxl max-sm:hidden">
         <Link className="hover:text-blue-400 hover:font-semibold text-black custom-selection pt-5" to={'/login'}>Log in</Link>
         <Link className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5 px-7 text-white hover:text-black font-semibold " to={'/signup'}>Sign Up</Link>       
-      </nav>     
+      </nav>
+      <div className="hidden max-sm:block">
+        <Dropdown />
+      </div>  
     </header>
   )
 }
