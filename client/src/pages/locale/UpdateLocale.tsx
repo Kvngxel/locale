@@ -64,16 +64,18 @@ export const UpdateLocale = () => {
   return (
     <div className="div">
       <NavBar />
-      <div className="h-screen flex relative">
-        <div className="w-full bg-white flex flex-col justify-center pl-[380px] pt-[550px]">
-          <h1 className="text-md font-sans font-bold mb-4">
-            Setup your Locale
-          </h1>
-          <p className="text-xs font-extralight">Create your dream locale</p>
+      <div className="flex">
+        <div className="w-full md:w-[50vw] mx-auto bg-white flex flex-col justify-center  pt-32">
+          <div className="text-center">
+            <h1 className="text-md font-sans font-bold mb-4">
+              Setup your Locale
+            </h1>
+            <p className="text-xs font-extralight">Create your dream locale</p>
+          </div>
           <div className="py-12">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col w-[60%] text-black mb-10"
+              className="flex flex-col w-[75%] mx-auto md:w-full text-black mb-10"
             >
               <label htmlFor="" className="text-xs font-semibold mb-1">
                 Locale name

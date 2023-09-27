@@ -13,7 +13,7 @@ export const UpdateProfile = () => {
   const [pPic, setPic] = useState(
     "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
   );
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<User | null>(null);
   const postDetails = (pics: File | null) => {
     if (pics && (pics.type === "image/jpeg" || pics.type === "image/png")) {
       const data = new FormData();
@@ -71,36 +71,38 @@ export const UpdateProfile = () => {
         },
       });
       const userData = await res.json();
-      setUser(userData)
+      setUser(userData);
     } catch (err) {
       console.error("error");
     }
   };
   useEffect(() => {
-    userDetails()
-    console.log(user)
-    
+    userDetails();
+    console.log(user);
   }, []);
 
   return (
     <div className="div">
       <NavBar />
-      <div className="h-screen flex relative">
-        <div className="w-full bg-white flex flex-col justify-center pl-[380px] pt-72">
-          <h1 className="text-md font-sans font-bold mb-4">
-            Setup your Profile
-          </h1>
-          <p className="text-xs font-extralight">Create your locale profile</p>
+      <div className="flex">
+        <div className="w-full md:w-[50vw] mx-auto bg-white flex flex-col justify-center  pt-32">
+          <div className="text-center">
+            <h1 className="text-md font-sans font-bold mb-4">
+              Setup your Profile
+            </h1>
+            <p className="text-xs font-extralight">
+              Create your locale profile
+            </p>
+          </div>
           <div className="py-12">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col w-[60%] text-black mb-10"
+              className="flex flex-col w-[80%] mx-auto md:w-full text-black mb-10"
             >
               <label htmlFor="" className="text-xs font-semibold mb-1">
                 First Name:
               </label>
               <input
-                
                 onChange={(event) => {
                   setfName(event.target.value);
                 }}
@@ -115,7 +117,6 @@ export const UpdateProfile = () => {
                 Last Name:
               </label>
               <input
-              
                 onChange={(event) => {
                   setlName(event.target.value);
                 }}
@@ -129,7 +130,7 @@ export const UpdateProfile = () => {
                 Email:
               </label>
               <input
-                value={user? user.email:"Loading user email..."}
+                value={user ? user.email : "Loading user email..."}
                 disabled
                 type="email"
                 placeholder="please enter your email"

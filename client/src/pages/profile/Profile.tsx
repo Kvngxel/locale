@@ -49,6 +49,15 @@ export const Profile = () => {
                       custom-selection border-2 hover:border-3 text-xs">
                       Edit Profile
                 </button>
+                <button
+                  onClick={() => {
+                    Navigate("/locale");
+                  }}
+                  className="bg-[#0d0c22] hover:bg-[#ffffff] rounded-full py-5
+                      px-9 mx-5 md:py-5 md:px-7 text-white hover:text-black font-semibold mt-4
+                      custom-selection border-2 hover:border-3 text-xs">
+                      My Locale
+                </button>
             </div>   
         </div>
         <div className="border w-[30%] mx-auto "></div>
