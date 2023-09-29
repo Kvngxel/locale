@@ -23,19 +23,28 @@ const authUser = asyncHandler(async (req, res) => {
     // console.log(user.password);
     const isMatch = await comparePasswords(password, user[0].password);
     console.log(isMatch);
-
+    
     if (!isMatch) {
       return res.status(400).json({ error: "Password is not correct" });
     }
-
+    
     // Authentication successful
+    const dir = await sql`SELECT * FROM directory WHERE user_id = ${user[0].id}`;
     const isComplete = !!user[0].updated_at;
+    let hasDir
+    if(!dir){
+      hasDir=false
+    }
+    else{
+      hasDir=true
+    }
 
     const userPayload = {
         id: user[0].id
       };
+      console.log({ token: generateToken(userPayload), isComplete, hasDir })
       
-      return res.status(201).json({ token: generateToken(userPayload), isComplete });
+      return res.status(201).json({ token: generateToken(userPayload), isComplete, hasDir });
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ error: "Internal Server Error" });

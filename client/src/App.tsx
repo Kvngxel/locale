@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,48 +14,64 @@ import { SignUp } from "./pages/signup/SignUp";
 import { Locale } from "./pages/locale/Locale";
 import { Profile } from "./pages/profile/Profile";
 import { UpdateLocale } from "./pages/locale/UpdateLocale";
+import { UploadRouteGuardProps } from "./types/userTypes";
 
 function App() {
-  const [completeProfile, setCompleteProfile] = useState(Boolean);
-  const [isLoggedIn, setIsLoggedIn] = useState(Boolean);
+  const CompleteProfile: React.FC<UploadRouteGuardProps> = ({ element }) => {
+    if (
+      !localStorage.getItem('token') ||
+      localStorage.getItem('token') === 'undefined'
+    ) {
+      return <Navigate to="/" />;
+    }
 
-  useEffect(() => {
-    setIsLoggedIn(!!localStorage.getItem("token"));
-    setCompleteProfile(!!localStorage.getItem("isComplete"));
-  }, []);
+    if(localStorage.getItem('isComplete')=== "true"){
+      return <>{element}</>; // Render the element
+    }
+    else{
+      return <>{<UpdateProfile/>}</>; // Render the element
+    }
+
+  };
+  const LoggedIn: React.FC<UploadRouteGuardProps> = ({ element }) => {
+    if (
+      localStorage.getItem('token')
+    ) {
+      return <Navigate to="/" />;
+    }
+    return <>{element}</>; // Render the element
+  };
+  const HasDirectory: React.FC<UploadRouteGuardProps> = ({ element }) => {
+    if (
+      localStorage.getItem('dir') === "true"
+    ) {
+      return <>{<UpdateLocale/>}</>; // Render the element
+    }
+    return <>{element}</>; // Render the element
+  };
 
   return (
     <Router>
       <Routes>
         <Route
           path="/login"
-          element={isLoggedIn ? <Navigate to="/" /> : <Login />}
+          element={<LoggedIn element={<Login />} />}
         />
         <Route
           path="/signup"
-          element={isLoggedIn ? <Navigate to="/" /> : <SignUp />}
+          element={<LoggedIn element={<SignUp />} />}
         />
         <Route
           path="/"
-          element={
-            isLoggedIn ? (
-              completeProfile ? (
-                <Home />
-              ) : (
-                <Navigate to="updateprofile" />
-              )
-            ) : (
-              <Home />
-            )
-          }
+          element={<Home />}
         />
-        <Route path="/updateprofile" element={<UpdateProfile />} />
+        <Route path="/updateprofile" element={<CompleteProfile element={<UpdateProfile />} />} />
         <Route path="/malamfx" element={<Mallamfx />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/locale" element={<Locale />} />
-        <Route path="/updatelocale" element={<UpdateLocale />} />
+        <Route path="/profile" element={<CompleteProfile element={<Profile />} />}/>
+        <Route path="/locale" element={<CompleteProfile element={<HasDirectory element={<Locale/>} />} />} />
+        <Route path="/updatelocale" element={<CompleteProfile element={<UpdateLocale />} />} />
         <Route path="*" element= "Error 404" />
       </Routes>
     </Router>

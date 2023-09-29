@@ -25,6 +25,7 @@ export const Login = () => {
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("isComplete", data.isComplete);
+        localStorage.setItem("hasDir", data.hasDir);
         console.log(data);
         Navigate("/");
       }

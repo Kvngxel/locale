@@ -29,3 +29,7 @@ export interface LocaleApi {
   updated_at: string;
   user_id: number;
 }
+
+export interface UploadRouteGuardProps {
+  element: React.ReactNode;
+}

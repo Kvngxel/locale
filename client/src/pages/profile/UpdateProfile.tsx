@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavBar } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/userTypes";
@@ -6,6 +6,7 @@ import { User } from "../../types/userTypes";
 export const UpdateProfile = () => {
   const Navigate = useNavigate();
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState("");
   const [fName, setfName] = useState("");
   const [lName, setlName] = useState("");
   const [picMessage, setPicMessage] = useState("");
@@ -15,6 +16,7 @@ export const UpdateProfile = () => {
   );
   const [user, setUser] = useState<User | null>(null);
   const postDetails = (pics: File | null) => {
+    setLoading("img recieved")
     if (pics && (pics.type === "image/jpeg" || pics.type === "image/png")) {
       const data = new FormData();
       data.append("file", pics);
@@ -27,17 +29,18 @@ export const UpdateProfile = () => {
         .then((res) => res.json())
         .then((data) => {
           setPic(data.url.toString());
+          setLoading("successful")
         })
         .catch((err) => {
           console.log(err);
-          console.log(pPic);
         });
     } else {
       return setPicMessage("It is not an image");
     }
   };
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    
     let token = localStorage.getItem("token");
     console.log(token);
     try {
@@ -76,11 +79,7 @@ export const UpdateProfile = () => {
       console.error("error");
     }
   };
-  useEffect(() => {
     userDetails();
-    console.log(user);
-  }, []);
-
   return (
     <div className="div">
       <NavBar />
@@ -163,6 +162,7 @@ export const UpdateProfile = () => {
               ></input>
               <h1>{picMessage}</h1>
               <h1>{error}</h1>
+              <h1>{loading}</h1>
               <button
                 type="submit"
                 onClick={() => {
