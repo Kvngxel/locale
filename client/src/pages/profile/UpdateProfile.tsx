@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavBar } from "../../components";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../types/userTypes";
@@ -58,6 +58,8 @@ export const UpdateProfile = () => {
         }),
       });
       const data = await response.json();
+      localStorage.setItem("isComplete", "true")
+      Navigate("/")
       console.log(data);
     } catch (err) {
       setError("Error Connecting to server");
@@ -79,7 +81,9 @@ export const UpdateProfile = () => {
       console.error("error");
     }
   };
-    userDetails();
+  useEffect(() => {
+    userDetails(); 
+  }, []);
   return (
     <div className="div">
       <NavBar />

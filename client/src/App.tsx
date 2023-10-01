@@ -43,9 +43,9 @@ function App() {
   };
   const HasDirectory: React.FC<UploadRouteGuardProps> = ({ element }) => {
     if (
-      localStorage.getItem('dir') === "true"
+      localStorage.getItem('hasDir') === "true"
     ) {
-      return <>{<UpdateLocale/>}</>; // Render the element
+      return <Navigate to="/updatelocale" />; // Render the element
     }
     return <>{element}</>; // Render the element
   };
