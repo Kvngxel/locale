@@ -151,43 +151,43 @@ export const Mallamfx = () => {
     <div className= " pl-10 pt-10">
     <div className="flex items-center">
      <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/CAD</div>
-     <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal'] " > = {Number(locale["cad"]).toFixed(6)} ▲</div>
+     <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal'] " > = {Number(locale["cad"]).toFixed(6).toString()} ▲</div>
 </div>
   <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/USD</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["usd"]).toFixed(6)}▼</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["usd"]).toFixed(6).toString()}▼</div>
  </div>
 <div className="flex items-center">
                 <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/JPY</div>
-                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["jpy"]).toFixed(6)} ▲</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["jpy"]).toFixed(6).toString()} ▲</div>
 </div>
 <div className="flex items-center">
                 <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/CNY</div>
-                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["cny"]).toFixed(6)} ▲</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["cny"]).toFixed(6).toString()} ▲</div>
 </div>
 <div className="flex items-center">
                 <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/QAR</div>
-                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["qar"]).toFixed(6)}▲</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["qar"]).toFixed(6).toString()}▲</div>
 </div>
 <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP /SAR</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["sar"]).toFixed(6)}▼</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["sar"]).toFixed(6).toString()}▼</div>
  </div>
  <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/EUR</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["eur"]).toFixed(6)} ▼</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["eur"]).toFixed(6).toString()} ▼</div>
  </div>
  <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/RUB</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["rub"]).toFixed(6)}▼</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["rub"]).toFixed(6).toString()}▼</div>
  </div>
  <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/INR</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["inr"]).toFixed(6)} ▼</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["inr"]).toFixed(6).toString()} ▼</div>
  </div>
  <div className="flex items-center">
               <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/SGD</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["sgd"]).toFixed(6)} ▼</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["sgd"]).toFixed(6).toString()} ▼</div>
  </div>
     </div>
 
