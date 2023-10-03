@@ -1,9 +1,104 @@
 import { NavBar } from '../components';
 import { Footer } from '../components';
 // import Api from '../components/API/Api';
+import { useEffect, useState } from "react";
+
+
+/* export const Locale = () => {
+    const [locale, setLocale] = useState([])
+    const userDetails = async searchValue => {
+        try {
+          
+          const res = await fetch(`http://localhost:3000/extracted/${searchValue}`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+             
+            },
+          });
+          const userData = await res.json();
+          setLocale(userData)
+        } catch (err) {
+            console.error("error");
+        }
+    };
+
+      useEffect(() => {
+        userDetails("usd")
+        
+        
+      }, []);
+  return (
+    <div>
+        <NavBar/>
+        <div className="mb-32">
+            <div className="text-center mt-5">
+                <h1 className="text-lg pt-20 pb-7 font-semibold">{locale?locale.dir_name:"Loading Directory Details"}</h1>
+                <p className="text-sm">{locale?locale.dir_name:"Loading Directory Details"}</p>
+            </div>
+            <img className="text-center w-[60vw]  mx-auto mt-10 rounded-sm " src={locale?locale.profile_image:"Loading Directory Details"}/>
+            <div className="mx-24 mt-20 text-center">
+                <h1 className="text-md pb-7 font-semibold">Address:</h1>
+                <p className="text-sm">{locale?locale.address:"Loading Directory Details"}</p>
+            </div>
+            <div className="mx-24 my-10 text-center">
+                <h1 className="text-md pb-7 font-semibold">Locale Email:</h1>
+                <p className="text-sm">{locale?locale.directory_email:"Loading Directory Details"}</p>
+            </div>
+            <div className="mx-24 my-10 text-center">
+                <h1 className="text-md mb-5 font-semibold">Locale Telephone:</h1>
+                <p className="text-sm">{locale?locale.telephone:"Loading Directory Details"}</p>
+            </div>
+            <div className="mx-24 my-10 text-center">
+                <h1 className="text-md mb-5 font-semibold">Description:</h1>
+                <p className="text-sm">{locale?locale.description:"Loading Directory Details"}</p>
+            </div>
+        </div>
+    </div>
+  );
+};
+ */
+
 
 
 export const Mallamfx = () => {
+  const [ locale, setLocale] = useState<{ [key: string]: string }>({})
+  const userDetails = async (searchValue) => {
+      try {
+        
+        const res = await fetch(`http://localhost:3000/extracted/${searchValue}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+           
+          },
+        });
+        const userData = await res.text();
+        setLocale((prevLocales) => ({
+          ...prevLocales,
+          [searchValue]: userData,
+        }))
+      } catch (err) {
+          console.error("error");
+      }
+  };
+    useEffect(() => {
+      
+    /*   userDetails("usd"); // Fetch data for "usd"
+      userDetails("eur"); // Fetch data for "eur"
+      userDetails("gbp"); // Fetch data for "gbp"
+   */
+      const currencyCodes = ["usd", "eur", "gbp","cad","jpy","cny","qar","sar","eur","rub","inr","sgd"]; // Add more currency codes as needed
+
+    // Loop through currency codes and fetch data for each one
+    currencyCodes.forEach((currencyCode) => {
+      userDetails(currencyCode);
+    });
+      
+    }, []); 
+
+
+
   return (
       <div>  
         <NavBar />
@@ -53,44 +148,44 @@ export const Mallamfx = () => {
     <div className="text-center text-black text-[40px] font-bold font-['Inter']">PAIRS </div>
     <div className= " pl-10 pt-10">
     <div className="flex items-center">
-     <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">USD/CAD</div>
-     <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 1.35 ▲</div>
+     <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/CAD</div>
+     <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal'] " > = {Number(locale["cad"]).toFixed(6)} ▲</div>
 </div>
   <div className="flex items-center">
-              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">USD/GBP</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 0.82▼</div>
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/USD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["usd"]).toFixed(6)}▼</div>
  </div>
 <div className="flex items-center">
-                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">USD/JPY</div>
-                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 149.21 ▲</div>
+                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/JPY</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["jpy"]).toFixed(6)} ▲</div>
 </div>
 <div className="flex items-center">
-                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">USD/CNY</div>
-                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 7.31 ▲</div>
+                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/CNY</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["cny"]).toFixed(6)} ▲</div>
 </div>
 <div className="flex items-center">
-                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">USD/QAR</div>
-                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = 3.65▲</div>
+                <div className="w-[122.51px] h-11 text-black text-[22px] font-normal font-['Metal']">GBP/QAR</div>
+                <div className="w-[201.86px] h-11 text-lime-900 text-[22px] font-normal font-['Metal']"> = {Number(locale["qar"]).toFixed(6)}▲</div>
 </div>
 <div className="flex items-center">
-              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">USD /SAR</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 3.75 ▼</div>
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP /SAR</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["sar"]).toFixed(6)}▼</div>
  </div>
  <div className="flex items-center">
-              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">USD/EUR</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 0.95 ▼</div>
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/EUR</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["eur"]).toFixed(6)} ▼</div>
  </div>
  <div className="flex items-center">
-              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">USD/RUB</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 96.56 ▼</div>
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/RUB</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["rub"]).toFixed(6)}▼</div>
  </div>
  <div className="flex items-center">
-              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">USD/INR</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 83.17 ▼</div>
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/INR</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["inr"]).toFixed(6)} ▼</div>
  </div>
  <div className="flex items-center">
-              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">USD/SGD</div>
-              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = 1.37 ▼</div>
+              <div className="w-[147.18px] h-[44.19px] text-black text-[22px] font-normal font-['Metal']">GBP/SGD</div>
+              <div className="w-[200.96px] h-[44.19px] text-red-600 text-[22px] font-normal font-['Metal']"> = {Number(locale["sgd"]).toFixed(6)} ▼</div>
  </div>
     </div>
 
