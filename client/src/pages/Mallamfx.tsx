@@ -63,7 +63,7 @@ import { useEffect, useState } from "react";
 
 export const Mallamfx = () => {
   const [ locale, setLocale] = useState<{ [key: string]: string }>({})
-  const userDetails = async (searchValue) => {
+  const userDetails = async (searchValue: string) => {
       try {
         
         const res = await fetch(`http://localhost:3000/extracted/${searchValue}`, {
