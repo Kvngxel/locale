@@ -94,6 +94,8 @@ export const Mallamfx = () => {
     currencyCodes.forEach((currencyCode) => {
       userDetails(currencyCode);
     });
+
+    window.scrollTo(0, 0);
       
     }, []); 
 
