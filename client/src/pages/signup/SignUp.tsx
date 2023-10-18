@@ -9,9 +9,10 @@ export const SignUp = () => {
   const Navigate = useNavigate();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+    event.preventDefault();    
     try {
-      const response = await fetch("http://localhost:3000/api/user", {
+      // const response = await fetch("https://locale-fcxr.onrender.com/api/user", {
+        const response = await fetch("http://localhost:3000/api/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

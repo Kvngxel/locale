@@ -3,7 +3,7 @@ import sql from "./db.js"
 import cors from "cors"
 import UserRoutes from "./routes/userRoutes.js";
 import DirectoryRoutes from "./routes/directoryRoutes.js"
-import axios from 'axios';
+// import axios from 'axios';
 import dotenv from 'dotenv';
 import { readFileAndPrint } from "./fileRead.js";
 import name from "./objectManupulation.js";

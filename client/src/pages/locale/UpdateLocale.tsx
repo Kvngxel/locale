@@ -38,7 +38,8 @@ export const UpdateLocale = () => {
     event.preventDefault();
     let token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:3000/api/directory", {
+      // const response = await fetch("https://locale-fcxr.onrender.com/api/directory", {
+        const response = await fetch("http://localhorsst:3000/api/directory", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -192,6 +193,9 @@ export const UpdateLocale = () => {
               <h1>{error}</h1>
               <button
                 type="submit"
+                onClick={() => {
+                  Navigate("/locale");
+                }}
                 className="bg-[#0d0c22] hover:bg-[#ffffff] border-2 border-transparent
                         hover:border-2 hover:border-black rounded-full py-5 px-7 text-white
                         hover:text-black font-semibold mt-7 custom-selection"

@@ -6,7 +6,8 @@ export const Locale = () => {
     const userDetails = async () => {
         try {
           let token = localStorage.getItem("token");
-          const res = await fetch("http://localhost:3000/api/directory", {
+          // const res = await fetch("https://locale-fcxr.onrender.com/api/directory", {
+            const res = await fetch("http://localhost:3000/api/directory", {
             method: "GET",
             headers: {
               "Content-Type": "application/json",

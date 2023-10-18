@@ -12,7 +12,8 @@ export const Profile = () => {
     const userDetails = async () => {
         try {
           let token = localStorage.getItem("token");
-          const res = await fetch("http://localhost:3000/api/user", {
+          // const res = await fetch("https://locale-fcxr.onrender.com/api/user", {
+            const res = await fetch("http://localhost:3000/api/user", {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
